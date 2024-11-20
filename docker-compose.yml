@@ -1,0 +1,39 @@
+services:
+  quality-admin-web:
+    build: 
+      context: ./quality-admin-web
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+      - "1880:1880"
+    volumes:
+      - ./quality-admin-web:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=production
+
+  quality-admin:
+    build:
+      context: ./quality-admin
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3002"
+      - "4000:4000"
+    volumes:
+      - ./quality-admin:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=production
+  quality-chatbot:
+    build:
+      context: ./quality-chatbot
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./quality-chatbot:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=production
