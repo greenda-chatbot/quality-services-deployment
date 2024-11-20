@@ -1,4 +1,4 @@
-find ./ -type f \( -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" \) \
+find ./quality-admin ./quality-admin-web ./quality-chatbot -type f \( -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" -o -name "**.env" -o -name ".env.*" -o -name "*.env" \) \
   -not -path "*/node_modules/*" \
   -not -path "*/.next/*" \
   -not -name "*.test.*" \
@@ -11,7 +11,7 @@ find ./ -type f \( -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx
 do
   echo "File: $file"
   echo "Content:"
-  sed 's|//.*||g; /\/\*.*\*\//d; /\/\*/,/\*\//d' "$file"
+  LC_ALL=C sed 's|//.*||g; /\/\*.*\*\//d; /\/\*/,/\*\//d' "$file"
   echo
 done > sh/nextjs_files_contents.txt
 

@@ -1,4 +1,4 @@
-File: .//quality-admin/bin/next-sever.js
+File: ./quality-admin/bin/next-sever.js
 Content:
 const http = require('http');
 const next = require('next');
@@ -17,7 +17,7 @@ nextApp
     console.log('cannot prepare next', e);
   });
 
-File: .//quality-admin/config/db.js
+File: ./quality-admin/config/db.js
 Content:
 const mysql = require('mysql2');
 
@@ -45,7 +45,7 @@ module.exports = {
   }
 };
 
-File: .//quality-admin/config/jwtMiddleware.js
+File: ./quality-admin/config/jwtMiddleware.js
 Content:
 const jwt = require('jsonwebtoken');
 
@@ -78,7 +78,7 @@ const jwtMiddleware = (req, res, next) => {
 
 module.exports = jwtMiddleware;
 
-File: .//quality-admin/next.config.js
+File: ./quality-admin/next.config.js
 Content:
 const nextConfig = {
   reactStrictMode: true,
@@ -91,7 +91,7 @@ const nextConfig = {
 
 module.exports = nextConfig;
 
-File: .//quality-admin/next-env.d.ts
+File: ./quality-admin/next-env.d.ts
 Content:
 
 
@@ -99,7 +99,7 @@ Content:
 
 
 
-File: .//quality-admin/type/frequencyType.ts
+File: ./quality-admin/type/frequencyType.ts
 Content:
 export interface FrequencyProps {
   frequencyData: FrequencyType;
@@ -135,7 +135,7 @@ export type AddFrequencyType = {
   frequency: string | null;
 };
 
-File: .//quality-admin/type/faqType.ts
+File: ./quality-admin/type/faqType.ts
 Content:
 export interface FaqProps {
   faqData: FaqType[];
@@ -161,7 +161,7 @@ export type ModalFaqType = {
   modal: boolean;
 };
 
-File: .//quality-admin/type/usersType.ts
+File: ./quality-admin/type/usersType.ts
 Content:
 export interface UsersProps {
   usersData: UsersType;
@@ -191,7 +191,7 @@ export type DetailUser = {
   };
 };
 
-File: .//quality-admin/type/commonType.ts
+File: ./quality-admin/type/commonType.ts
 Content:
 
 export interface TableProps {
@@ -217,7 +217,7 @@ export type DownloadType = {
   phone_number: string;
 };
 
-File: .//quality-admin/type/react-dropdown.d.ts
+File: ./quality-admin/type/react-dropdown.d.ts
 Content:
 import { ReactNode } from 'react';
 
@@ -246,7 +246,7 @@ declare module 'react-dropdown' {
   export default Dropdown;
 }
 
-File: .//quality-admin/type/feeType.ts
+File: ./quality-admin/type/feeType.ts
 Content:
 export interface FeeProps {
   feeData: FeeType;
@@ -282,7 +282,7 @@ export type FeeDropdownType = {
   trd: boolean;
 };
 
-File: .//quality-admin/type/instituteType.ts
+File: ./quality-admin/type/instituteType.ts
 Content:
 export interface InstituteProps {
   instituteData: InstituteType;
@@ -341,7 +341,16 @@ export type DetailInstitute = {
   remarks: string | null;
 };
 
-File: .//quality-admin/ecosystem.config.js
+File: ./quality-admin/.env
+Content:
+# NEXT_PUBLIC_APP_API_KEY = "http:
+# NEXT_PUBLIC_APP_API_KEY = "http:
+NEXT_PUBLIC_APP_API_KEY = "http:
+
+GMAIL_ADDRESS = "qhrjs407@gmail.com"
+GMAIL_PASSWORD = "uuxfpjgiwhkfohpo"
+JWT_KEY = 'qhrjs407!'
+File: ./quality-admin/ecosystem.config.js
 Content:
 module.exports = {
   apps: [
@@ -350,7 +359,7 @@ module.exports = {
       script: './bin/www', 
       env: {
         NODE_ENV: 'production',
-        PORT: 3000, 
+        PORT: 3002, 
       },
     },
     {
@@ -365,7 +374,7 @@ module.exports = {
   ],
 };
 
-File: .//quality-admin/routes/v1/fee/index.js
+File: ./quality-admin/routes/v1/fee/index.js
 Content:
 const router = require('express').Router();
 const dao = require('./dao');
@@ -380,7 +389,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-File: .//quality-admin/routes/v1/fee/dao.js
+File: ./quality-admin/routes/v1/fee/dao.js
 Content:
 const db = require('../../../config/db');
 const conn = db.init();
@@ -541,7 +550,7 @@ exports.delete = (req, res) => {
   });
 };
 
-File: .//quality-admin/routes/v1/frequency/index.js
+File: ./quality-admin/routes/v1/frequency/index.js
 Content:
 const router = require('express').Router();
 const dao = require('./dao');
@@ -557,7 +566,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-File: .//quality-admin/routes/v1/frequency/dao.js
+File: ./quality-admin/routes/v1/frequency/dao.js
 Content:
 const db = require('../../../config/db');
 const conn = db.init();
@@ -874,7 +883,7 @@ exports.modify = (req, res) => {
   });
 };
 
-File: .//quality-admin/routes/v1/auth/index.js
+File: ./quality-admin/routes/v1/auth/index.js
 Content:
 const router = require('express').Router();
 const dao = require('./dao'); 
@@ -887,7 +896,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-File: .//quality-admin/routes/v1/auth/dao.js
+File: ./quality-admin/routes/v1/auth/dao.js
 Content:
 const db = require('../../../config/db');
 const conn = db.init();
@@ -1002,7 +1011,7 @@ exports.send = (req, res) => {
   });
 };
 
-File: .//quality-admin/routes/v1/faq/index.js
+File: ./quality-admin/routes/v1/faq/index.js
 Content:
 const router = require('express').Router();
 const dao = require('./dao');
@@ -1018,7 +1027,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-File: .//quality-admin/routes/v1/faq/dao.js
+File: ./quality-admin/routes/v1/faq/dao.js
 Content:
 const db = require('../../../config/db');
 const conn = db.init();
@@ -1101,7 +1110,7 @@ exports.delete = (req, res) => {
   });
 };
 
-File: .//quality-admin/routes/v1/institute/index.js
+File: ./quality-admin/routes/v1/institute/index.js
 Content:
 const router = require('express').Router();
 const dao = require('./dao');
@@ -1117,7 +1126,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-File: .//quality-admin/routes/v1/institute/dao.js
+File: ./quality-admin/routes/v1/institute/dao.js
 Content:
 const db = require('../../../config/db');
 const conn = db.init();
@@ -1365,7 +1374,7 @@ exports.modify = (req, res) => {
   );
 };
 
-File: .//quality-admin/routes/v1/index.js
+File: ./quality-admin/routes/v1/index.js
 Content:
 const router = require('express').Router();
 
@@ -1389,7 +1398,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-File: .//quality-admin/routes/v1/users/index.js
+File: ./quality-admin/routes/v1/users/index.js
 Content:
 const router = require('express').Router();
 const dao = require('./dao');
@@ -1405,7 +1414,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-File: .//quality-admin/routes/v1/users/dao.js
+File: ./quality-admin/routes/v1/users/dao.js
 Content:
 const db = require('../../../config/db');
 const conn = db.init();
@@ -1520,7 +1529,7 @@ exports.modify = (req, res) => {
   );
 };
 
-File: .//quality-admin/routes/users.js
+File: ./quality-admin/routes/users.js
 Content:
 var express = require('express');
 var router = express.Router();
@@ -1531,7 +1540,7 @@ router.get('/', function (req, res, next) {
 
 module.exports = router;
 
-File: .//quality-admin/routes/index.js
+File: ./quality-admin/routes/index.js
 Content:
 var express = require('express');
 var router = express.Router();
@@ -1546,7 +1555,7 @@ router.use('/v1', v1);
 
 module.exports = router;
 
-File: .//quality-admin/app.js
+File: ./quality-admin/app.js
 Content:
 var express = require('express');
 var path = require('path');
@@ -1575,7 +1584,7 @@ app.use('/users', usersRouter);
 
 module.exports = app;
 
-File: .//quality-admin/src/component/Fee/FeeComponent.tsx
+File: ./quality-admin/src/component/Fee/FeeComponent.tsx
 Content:
 import { NextPage } from 'next';
 import { useState } from 'react';
@@ -1818,7 +1827,7 @@ const BtnBox = styled.div`
   display: flex;
 `;
 
-File: .//quality-admin/src/component/Fee/AddFee.tsx
+File: ./quality-admin/src/component/Fee/AddFee.tsx
 Content:
 import { useState, useRef } from 'react';
 import { useRouter } from 'next/router';
@@ -2031,7 +2040,7 @@ const BtnBox = styled.div`
   margin-top: 12px;
 `;
 
-File: .//quality-admin/src/component/Fee/EditFee.tsx
+File: ./quality-admin/src/component/Fee/EditFee.tsx
 Content:
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
@@ -2225,7 +2234,7 @@ const BtnBox = styled.div`
   margin-top: 12px;
 `;
 
-File: .//quality-admin/src/component/Frequency/AddFrequency.tsx
+File: ./quality-admin/src/component/Frequency/AddFrequency.tsx
 Content:
 import { NextPage } from 'next';
 import { useEffect, useState, useCallback } from 'react';
@@ -2552,7 +2561,7 @@ const BtnBox = styled.div`
   margin-top: 12px;
 `;
 
-File: .//quality-admin/src/component/Frequency/FrequencyComponent.tsx
+File: ./quality-admin/src/component/Frequency/FrequencyComponent.tsx
 Content:
 import { NextPage } from 'next';
 import { useEffect, useRef, useState } from 'react';
@@ -2848,7 +2857,7 @@ const BtnBox = styled.div`
   display: flex;
 `;
 
-File: .//quality-admin/src/component/Frequency/ModifyFrequency.tsx
+File: ./quality-admin/src/component/Frequency/ModifyFrequency.tsx
 Content:
 import { NextPage } from 'next';
 import { useState } from 'react';
@@ -3021,7 +3030,7 @@ const BtnBox = styled.div`
   margin-top: 17px;
 `;
 
-File: .//quality-admin/src/component/FAQ/AddFaq.tsx
+File: ./quality-admin/src/component/FAQ/AddFaq.tsx
 Content:
 import { useCallback, useRef } from 'react';
 import { useRouter } from 'next/router';
@@ -3194,7 +3203,7 @@ const BtnBox = styled.div`
   margin-top: 12px;
 `;
 
-File: .//quality-admin/src/component/FAQ/DeleteFaq.tsx
+File: ./quality-admin/src/component/FAQ/DeleteFaq.tsx
 Content:
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
@@ -3327,7 +3336,7 @@ const BtnBox = styled.div`
   margin-top: 12px;
 `;
 
-File: .//quality-admin/src/component/FAQ/ModifyFaq.tsx
+File: ./quality-admin/src/component/FAQ/ModifyFaq.tsx
 Content:
 import { useRouter } from 'next/router';
 import axios from 'axios';
@@ -3534,7 +3543,7 @@ const BtnBox = styled.div`
   margin-top: 12px;
 `;
 
-File: .//quality-admin/src/component/FAQ/FaqComponent.tsx
+File: ./quality-admin/src/component/FAQ/FaqComponent.tsx
 Content:
 import { NextPage } from 'next';
 import React, { useState } from 'react';
@@ -3836,7 +3845,7 @@ const Answer = styled.div`
   }
 `;
 
-File: .//quality-admin/src/component/Institute/InstituteComponent.tsx
+File: ./quality-admin/src/component/Institute/InstituteComponent.tsx
 Content:
 import { NextPage } from 'next';
 import { useState, useCallback, useRef } from 'react';
@@ -4271,7 +4280,7 @@ const DeleteIcon = styled(IoTrashOutline)``;
 
 const EditIcon = styled(LuPencil)``;
 
-File: .//quality-admin/src/component/Institute/ModifyInstitute.tsx
+File: ./quality-admin/src/component/Institute/ModifyInstitute.tsx
 Content:
 import { useRouter } from 'next/router';
 import { useRef, useState, useCallback } from 'react';
@@ -4677,7 +4686,7 @@ const BtnBox = styled.div`
   margin-top: 12px;
 `;
 
-File: .//quality-admin/src/component/Institute/AddInstitute.tsx
+File: ./quality-admin/src/component/Institute/AddInstitute.tsx
 Content:
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -5018,7 +5027,7 @@ const BtnBox = styled.div`
   margin-top: 12px;
 `;
 
-File: .//quality-admin/src/component/Layout/Layout.tsx
+File: ./quality-admin/src/component/Layout/Layout.tsx
 Content:
 import { NextPage } from 'next';
 import styled from 'styled-components';
@@ -5056,7 +5065,7 @@ const Main = styled.main`
   padding: 16px;
 `;
 
-File: .//quality-admin/src/component/Layout/Sidebar.tsx
+File: ./quality-admin/src/component/Layout/Sidebar.tsx
 Content:
 import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
@@ -5273,7 +5282,7 @@ const SettingIcon = styled(TbSettings)`
   font-size: 22px;
 `;
 
-File: .//quality-admin/src/component/Common/Dropdown/StyledDropdown.tsx
+File: ./quality-admin/src/component/Common/Dropdown/StyledDropdown.tsx
 Content:
 
 import styled from 'styled-components';
@@ -5376,7 +5385,7 @@ const ArrowIcon = styled(IoIosArrowDown)`
   font-size: 18px;
 `;
 
-File: .//quality-admin/src/component/Common/Dropdown/Numberdown.tsx
+File: ./quality-admin/src/component/Common/Dropdown/Numberdown.tsx
 Content:
 
 import { useRouter } from 'next/router';
@@ -5502,7 +5511,7 @@ const SelectSpan = styled.span`
   color: #636363;
 `;
 
-File: .//quality-admin/src/component/Common/Dropdown/Dropdown.tsx
+File: ./quality-admin/src/component/Common/Dropdown/Dropdown.tsx
 Content:
 
 import { useRouter } from 'next/router';
@@ -5626,7 +5635,7 @@ const ArrowIcon = styled(IoIosArrowDown)`
   font-size: 18px;
 `;
 
-File: .//quality-admin/src/component/Common/Pagination.tsx
+File: ./quality-admin/src/component/Common/Pagination.tsx
 Content:
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -5700,7 +5709,7 @@ const StyledPagination = styled(Pagination)`
   }
 `;
 
-File: .//quality-admin/src/component/Common/Card.tsx
+File: ./quality-admin/src/component/Common/Card.tsx
 Content:
 import { NextPage } from 'next';
 import styled from 'styled-components';
@@ -5725,7 +5734,7 @@ const CardBase = styled.div`
   overflow-y: scroll;
 `;
 
-File: .//quality-admin/src/component/Common/Buttons/ApplyBtn.tsx
+File: ./quality-admin/src/component/Common/Buttons/ApplyBtn.tsx
 Content:
 import styled from 'styled-components';
 
@@ -5757,7 +5766,7 @@ const ApplyButton = styled.button`
   }
 `;
 
-File: .//quality-admin/src/component/Common/Buttons/RefreshBtn.tsx
+File: ./quality-admin/src/component/Common/Buttons/RefreshBtn.tsx
 Content:
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
@@ -5794,7 +5803,7 @@ const RefreshIcon = styled(IoCloseCircle)`
   color: #757575;
 `;
 
-File: .//quality-admin/src/component/Common/ExcelUpld.tsx
+File: ./quality-admin/src/component/Common/ExcelUpld.tsx
 Content:
 import { useState } from 'react';
 import * as Excel from 'exceljs';
@@ -6063,7 +6072,7 @@ const ErrorStrong = styled.strong`
   color: red;
 `;
 
-File: .//quality-admin/src/component/Common/MobileModal.tsx
+File: ./quality-admin/src/component/Common/MobileModal.tsx
 Content:
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
@@ -6098,7 +6107,7 @@ const ModalInner = styled.div`
   border-radius: 5px;
 `;
 
-File: .//quality-admin/src/component/Common/Table/SortingTable.tsx
+File: ./quality-admin/src/component/Common/Table/SortingTable.tsx
 Content:
 import React, { useState, useMemo } from 'react';
 import {
@@ -6246,7 +6255,7 @@ const StyledTableCell = styled(TableCell)`
   }
 `;
 
-File: .//quality-admin/src/component/Common/Table/CheckTable.tsx
+File: ./quality-admin/src/component/Common/Table/CheckTable.tsx
 Content:
 import { NextPage } from 'next';
 import styled from 'styled-components';
@@ -6312,7 +6321,7 @@ const StyledTableCellHead = styled(TableCell)`
   }
 `;
 
-File: .//quality-admin/src/component/Common/Table/CommonTable.tsx
+File: ./quality-admin/src/component/Common/Table/CommonTable.tsx
 Content:
 import { NextPage } from 'next';
 import styled from 'styled-components';
@@ -6375,7 +6384,7 @@ const StyledTableCellHead = styled(TableCell)`
   }
 `;
 
-File: .//quality-admin/src/component/Common/Modal.tsx
+File: ./quality-admin/src/component/Common/Modal.tsx
 Content:
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
@@ -6409,7 +6418,7 @@ const ModalInner = styled.div`
   border-radius: 5px;
 `;
 
-File: .//quality-admin/src/component/Common/Toast.tsx
+File: ./quality-admin/src/component/Common/Toast.tsx
 Content:
 import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
@@ -6495,7 +6504,7 @@ const CloseIcon = styled(VscChromeClose)`
   font-size: 11px;
 `;
 
-File: .//quality-admin/src/component/Common/SelectCategory.tsx
+File: ./quality-admin/src/component/Common/SelectCategory.tsx
 Content:
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -6577,7 +6586,7 @@ const CategoryItem = styled.li<{ isQuery: boolean }>`
   cursor: pointer;
 `;
 
-File: .//quality-admin/src/component/Signin/SigninComponent.tsx
+File: ./quality-admin/src/component/Signin/SigninComponent.tsx
 Content:
 import axios from 'axios';
 import React, { useCallback, useEffect, useState, useRef } from 'react';
@@ -6842,7 +6851,7 @@ const SigninBtn = styled.button`
   }
 `;
 
-File: .//quality-admin/src/component/Users/UsersCompoonent.tsx
+File: ./quality-admin/src/component/Users/UsersCompoonent.tsx
 Content:
 import { NextPage } from 'next';
 import { useRef, useState, useCallback } from 'react';
@@ -7157,7 +7166,7 @@ const DetailBtn = styled.button`
   border-radius: 6px;
 `;
 
-File: .//quality-admin/src/component/Users/UserDetail.tsx
+File: ./quality-admin/src/component/Users/UserDetail.tsx
 Content:
 import { NextPage } from 'next';
 import { useCallback, useRef } from 'react';
@@ -7372,7 +7381,7 @@ const BtnBox = styled.div`
   margin-top: 12px;
 `;
 
-File: .//quality-admin/src/component/Users/UserSignup.tsx
+File: ./quality-admin/src/component/Users/UserSignup.tsx
 Content:
 import { useCallback, useRef } from 'react';
 import { useRouter } from 'next/router';
@@ -7548,7 +7557,7 @@ const BtnBox = styled.div`
   margin-top: 12px;
 `;
 
-File: .//quality-admin/src/utils/handleSearch.ts
+File: ./quality-admin/src/utils/handleSearch.ts
 Content:
 import { Router, useRouter } from 'next/router';
 import { useCallback } from 'react';
@@ -7574,7 +7583,7 @@ const handleSearch = () => {
 
 export default handleSearch;
 
-File: .//quality-admin/src/utils/handleDwn.ts
+File: ./quality-admin/src/utils/handleDwn.ts
 Content:
 import dayjs from 'dayjs';
 
@@ -7635,7 +7644,7 @@ const styleHeaderCell = (cell: any) => {
 
 export default handleExcelDwn;
 
-File: .//quality-admin/src/utils/downloadData.ts
+File: ./quality-admin/src/utils/downloadData.ts
 Content:
 import dayjs from 'dayjs';
 
@@ -7698,7 +7707,7 @@ const styleHeaderCell = (cell: Excel.Cell) => {
 
 export default handleDwn;
 
-File: .//quality-admin/src/utils/checkAuth.ts
+File: ./quality-admin/src/utils/checkAuth.ts
 Content:
 import { GetServerSidePropsContext } from 'next';
 import cookie from 'cookie';
@@ -7722,7 +7731,7 @@ const checkAuth = (context: GetServerSidePropsContext) => {
 
 export default checkAuth;
 
-File: .//quality-admin/src/container/FeeContainer.tsx
+File: ./quality-admin/src/container/FeeContainer.tsx
 Content:
 import { NextPage } from 'next';
 import { useRef, useState, useCallback, useEffect } from 'react';
@@ -7888,7 +7897,7 @@ const LightP = styled(ToastP)`
   font-size: 14px;
 `;
 
-File: .//quality-admin/src/container/FaqContainer.tsx
+File: ./quality-admin/src/container/FaqContainer.tsx
 Content:
 import { NextPage } from 'next';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -7962,7 +7971,7 @@ const FaqContainer: NextPage<FaqProps> = ({ faqData }) => {
 
 export default FaqContainer;
 
-File: .//quality-admin/src/container/UsersContainer.tsx
+File: ./quality-admin/src/container/UsersContainer.tsx
 Content:
 import { NextPage } from 'next';
 import { useState } from 'react';
@@ -8032,7 +8041,7 @@ const UsersContainer: NextPage<UsersProps> = ({ usersData }) => {
 
 export default UsersContainer;
 
-File: .//quality-admin/src/container/FrequencyContainer.tsx
+File: ./quality-admin/src/container/FrequencyContainer.tsx
 Content:
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -8215,7 +8224,7 @@ const FrequencyContainer: NextPage<FrequencyProps> = ({ frequencyData }) => {
 
 export default FrequencyContainer;
 
-File: .//quality-admin/src/container/SigninContainer.tsx
+File: ./quality-admin/src/container/SigninContainer.tsx
 Content:
 import React, { useCallback } from 'react';
 
@@ -8227,7 +8236,7 @@ const SigninContainer: React.FC = () => {
 
 export default SigninContainer;
 
-File: .//quality-admin/src/container/InstituteContainer.tsx
+File: ./quality-admin/src/container/InstituteContainer.tsx
 Content:
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -8337,7 +8346,7 @@ const InstituteContainer: NextPage<InstituteProps> = ({ instituteData }) => {
 
 export default InstituteContainer;
 
-File: .//quality-admin/src/styles/globalstyles.ts
+File: ./quality-admin/src/styles/globalstyles.ts
 Content:
 import { createGlobalStyle } from 'styled-components';
 import Reset from 'styled-reset';
@@ -8415,7 +8424,7 @@ a, button, input {
 
 export default GlobalStyles;
 
-File: .//quality-admin/src/styles/theme.ts
+File: ./quality-admin/src/styles/theme.ts
 Content:
 const theme = {
   
@@ -8450,7 +8459,7 @@ const theme = {
 
 export default theme;
 
-File: .//quality-admin/src/hooks/useCheckbox.ts
+File: ./quality-admin/src/hooks/useCheckbox.ts
 Content:
 import { useState, useEffect } from 'react';
 
@@ -8508,7 +8517,7 @@ const useCheckbox = (datas: { id: number }[]) => {
 
 export default useCheckbox;
 
-File: .//quality-admin/src/pages/index.tsx
+File: ./quality-admin/src/pages/index.tsx
 Content:
 import checkAuth from '@/utils/checkAuth';
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next';
@@ -8537,7 +8546,7 @@ export const getServerSideProps: GetServerSideProps = async (
   };
 };
 
-File: .//quality-admin/src/pages/chatbot/institute.tsx
+File: ./quality-admin/src/pages/chatbot/institute.tsx
 Content:
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next';
 import axios from 'axios';
@@ -8597,7 +8606,7 @@ export const getServerSideProps: GetServerSideProps = async (
   };
 };
 
-File: .//quality-admin/src/pages/chatbot/fee.tsx
+File: ./quality-admin/src/pages/chatbot/fee.tsx
 Content:
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next';
 import axios from 'axios';
@@ -8653,7 +8662,7 @@ export const getServerSideProps: GetServerSideProps = async (
   };
 };
 
-File: .//quality-admin/src/pages/chatbot/frequency.tsx
+File: ./quality-admin/src/pages/chatbot/frequency.tsx
 Content:
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next';
 import axios from 'axios';
@@ -8705,7 +8714,7 @@ export const getServerSideProps: GetServerSideProps = async (
   };
 };
 
-File: .//quality-admin/src/pages/chatbot/faq.tsx
+File: ./quality-admin/src/pages/chatbot/faq.tsx
 Content:
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next';
 import axios from 'axios';
@@ -8748,7 +8757,7 @@ export const getServerSideProps: GetServerSideProps = async (
   };
 };
 
-File: .//quality-admin/src/pages/_document.tsx
+File: ./quality-admin/src/pages/_document.tsx
 Content:
 import Document, {
   Html,
@@ -8803,7 +8812,7 @@ class MyDocument extends Document {
 
 export default MyDocument;
 
-File: .//quality-admin/src/pages/users/index.tsx
+File: ./quality-admin/src/pages/users/index.tsx
 Content:
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next';
 import axios from 'axios';
@@ -8855,7 +8864,7 @@ export const getServerSideProps: GetServerSideProps = async (
   };
 };
 
-File: .//quality-admin/src/pages/_app.tsx
+File: ./quality-admin/src/pages/_app.tsx
 Content:
 import type { AppProps } from 'next/app';
 import { NextPage } from 'next';
@@ -8880,7 +8889,7 @@ const App: NextPage<AppProps> = ({ Component, pageProps }: AppProps) => {
 
 export default App;
 
-File: .//quality-admin/src/pages/signin.tsx
+File: ./quality-admin/src/pages/signin.tsx
 Content:
 import { NextPage } from 'next';
 import SigninContainer from '@/container/SigninContainer';
@@ -8891,1245 +8900,7 @@ const signin: NextPage = () => {
 
 export default signin;
 
-File: .//quality-chatbot/config/db.js
-Content:
-const mysql = require('mysql2');
-
-const db_info = {
-  host: '13.209.138.233',
-  port: '3306',
-  user: 'root',
-  password: 'chatbot',
-  database: 'qcbot'
-};
-
-module.exports = {
-  init() {
-    return mysql.createConnection(db_info);
-  },
-  connect(conn) {
-    conn.connect(function (err) {
-      if (err) console.error(`mysql connection error : ${err}`);
-      else console.log('mysql is connected successfully!');
-    });
-  }
-};
-File: .//quality-chatbot/routes/chatbot/information/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: [
-        {
-          carousel: {
-            type: 'basicCard',
-            items: [
-              {
-                description: "자가품질검사 수수료 및 위탁 검사기관 안내, 검사시기를 알려드리는 알림톡과 검사 절차 안내, 자주 묻는 질문의 궁금증을 해결해 드려요",
-                thumbnail: {
-                  imageUrl: 'https:
-                }
-              },
-              {
-                description: "'검사 알림', '검사 절차', '수수료'처럼 간단 명료하게 질문해주세요",
-                thumbnail: {
-                  imageUrl: 'https:
-                }
-              },
-              {
-                description: "'메뉴', '처음으로'라고 입력하시면 첫 화면으로 이동하여 챗봇 메뉴를 이용하실 수 있습니다",
-                thumbnail: {
-                  imageUrl: 'https:
-                }
-              },
-              {
-                description: "개인정보(성함/연락처/주민번호 등)나 이미지/동영상은 입력하지 말아주세요. 챗봇에서는 확인이 어렵습니다",
-                thumbnail: {
-                  imageUrl: 'https:
-                }
-              },
-            ]
-          }
-        }
-      ]
-    }
-  });
-});
-
-
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'information unknown uri ${req.path}' });
-});
-
-module.exports = router;
-
-File: .//quality-chatbot/routes/chatbot/fee/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: [
-        {
-          basicCard: {
-            title: '',
-            description:
-              `\n안녕하세요! 자가품질검사 수수료를 계산해 드립니다. 아래 링크를 통해 필요한 수수료를 확인해 보세요. 
-              \n\n수수료는 식약처 기준에 따라 산정되며, 재료비나 장비 구매 비용 차이로 인해 수수료가 달라질 수 있습니다.`,
-            thumbnail: {
-              imageUrl: 'https:
-            },
-            buttons: [
-              {
-                action: 'webLink',
-                label: '👉 수수료 계산하기',
-                webLinkUrl: 'http:
-              }
-            ]
-          }
-        }
-      ],
-      quickReplies: [
-        {
-          action: 'block',
-          label: '챗봇 도움말',
-          blockId: '66d55c20dee2735433531035',
-        },
-      ]
-    }
-  });
-});
-
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'fee unknown uri ${req.path}' });
-});
-
-module.exports = router;
-File: .//quality-chatbot/routes/chatbot/notification/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: [
-        {
-          basicCard: {
-            title: '',
-            description:
-              `\n알림톡 신청을 해주셔서 감사합니다!
-              \n\n자가품질검사 알림톡 서비스를 시작하기 전에 업종과 취급 품목에 대한 정보가 필요합니다.
-              \n\n아래 링크에서 사업자 등록증을 첨부하시거나 정보를 직접 입력하는 방법 중에서 선택해주세요. 
-              `,
-            thumbnail: {
-              imageUrl: 'https:
-            },
-            buttons: [
-              {
-                action: 'webLink',
-                label: '👉 알림톡 신청하기',
-                webLinkUrl: 'http:
-              }
-            ]
-          }
-        }
-      ]
-    }
-  });
-});
-
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
-});
-
-module.exports = router;
-File: .//quality-chatbot/routes/chatbot/faq/answer/index.js
-Content:
-const router = require('express').Router();
-const db = require('../../../../config/db');
-const conn = db.init();
-
-
-router.post('/', (req, res) => {
-  const item = req.body.action.clientExtra;
-
-  sql = `SELECT answer FROM qcbot.tbl_faq WHERE id = ?;`
-  conn.query(sql,[item.id], (err, row) => {
-    if(err) throw err;
-
-    return res.send({
-      version: '2.0',
-      template: {
-        outputs: [
-          {
-            simpleText: {
-              text: row[0].answer
-            }
-          },
-          {
-            basicCard: {
-              description: '도움이 되셨나요?',
-              buttons: [
-                {
-                  action: 'block',
-                  label: '예',
-                  blockId: '66b5751827bc5c0c5f6d66ad'
-                },
-                {
-                  action: 'block',
-                  label: '아니오',
-                  blockId: '66b5751827bc5c0c5f6d66ad'
-                }
-              ]
-            }
-          }
-        ],
-      }
-    });
-  })
-});
-
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
-});
-
-module.exports = router;
-File: .//quality-chatbot/routes/chatbot/faq/enter/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: [
-        {
-          basicCard: {
-            title: '자주 묻는 질문',
-            description:
-              '아래 버튼을 누르고 무엇이든 물어보세요',
-            thumbnail: {
-              imageUrl: 'https:
-            },
-            buttons: [
-              {
-                action: 'block',
-                label: '질문하기',
-                blockId: '66c05541e2ce1251f181e7ea'
-              }
-            ]
-          }
-        }
-      ]
-    }
-  });
-});
-
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
-});
-
-module.exports = router;
-File: .//quality-chatbot/routes/chatbot/faq/question/index.js
-Content:
-const router = require('express').Router();
-const db = require('../../../../config/db');
-const conn = db.init();
-
-
-const generateFaqResponse = (item, callback) => {
-  const sql = `SELECT question, id FROM qcbot.tbl_faq WHERE ? LIKE CONCAT('%', keyword, '%');`;
-
-  conn.query(sql, [item], (err, rows) => {
-    if (err) return callback(err);
-
-    const carouselItems = rows.map(data => ({
-      description: data.question,
-      buttons: [
-        {
-          action: 'block',
-          label: '답변보기',
-          blockId: '66c062d6323697599a6edba4',
-          extra: {
-            id: data.id
-          }
-        },
-      ]
-    }));
-
-    const outputArray = [
-      {
-        simpleImage: {
-          imageUrl: 'https:
-          altText: '아래 추천 질문을 보시고 해당되는 내용의 답변보기 버튼을 클릭해 주세요'
-        }
-      },
-      {
-        carousel: {
-          type: 'basicCard',
-          items: carouselItems
-        }
-      }
-    ];
-
-    callback(null, outputArray);
-  });
-};
-
-
-router.post('/', (req, res) => {
-  const item = req.body.action.detailParams.sys_text.value;
-
-  generateFaqResponse(item, (err, outputArray) => {
-    if (err) {
-      return res.status(500).send({ success: false, msg: 'Internal Server Error' });
-    }
-
-    return res.send({
-      version: '2.0',
-      template: {
-        outputs: outputArray,
-      }
-    });
-  });
-});
-
-
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: `unknown uri ${req.path}` });
-});
-
-module.exports = router;
-
-File: .//quality-chatbot/routes/chatbot/institute/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: [
-        {
-          basicCard: {
-            title: '',
-            description:
-              '\n자가품질검사 검사 기관을 안내해 드리겠습니다.\n\n아래 버튼을 클릭해주세요',
-            thumbnail: {
-              imageUrl: 'https:
-            },
-            buttons: [
-              {
-                action: 'webLink',
-                label: '👉 시험 검사기관 조회',
-                webLinkUrl: 'http:
-              }
-            ]
-          }
-        }
-      ],
-      quickReplies: [
-        {
-          action: 'block',
-          label: '챗봇 도움말',
-          blockId: '66d55c20dee2735433531035',
-        },
-      ]
-    }
-  });
-});
-
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'institute unknown uri ${req.path}' });
-});
-
-module.exports = router;
-File: .//quality-chatbot/routes/chatbot/livestock/result/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  const item = req.body.action.clientExtra;
-  let outputArray = null;
-
-  if(item.labelNo === '1번') {
-    if(item.fst && item.scd) {
-      outputArray = [
-        {
-          basicCard: {
-            description: '안정관리인증작업장 총점 95%이상이셔서 결과가 나온 날로부터 1년간 자가품질검사 면제 대상입니다. 최소 6개 이상, 그 중 생산량이 많은 상위 3개를 포함해서 검사를 진행해주세요.',
-            buttons: [
-              {
-                action: 'block',
-                label: '처음으로',
-                blockId: '66b5751827bc5c0c5f6d66ad'
-              }
-            ]
-          }
-        }
-      ]
-    } else if(!item.fst && item.scd) {
-      outputArray = [
-        {
-          basicCard: {
-            description: '최소 6개 이상, 그 중 생산량이 많은 상위 3개를 포함해서 검사를 진행해주세요.',
-            buttons: [
-              {
-                action: 'block',
-                label: '처음으로',
-                blockId: '66b5751827bc5c0c5f6d66ad'
-              }
-            ]
-          }
-        }
-      ]
-    } else if(!item.fst && !item.scd) {
-      outputArray = [
-        {
-          basicCard: {
-            description: '전체 품목의 절반 이상을 검사하셔야 합니다.\n소수점은 반올림 한 값입니다.\n\n예를 들어 동일 유형의 품목이 7개라면 4개의 검사를 받으셔야 해요',
-            buttons: [
-              {
-                action: 'block',
-                label: '처음으로',
-                blockId: '66b5751827bc5c0c5f6d66ad'
-              }
-            ]
-          }
-        }
-      ]
-    } else {
-      outputArray = [
-        {
-          basicCard: {
-            description: '',
-            thumbnail: {
-              imageUrl: 'https:
-            },
-            buttons: [
-              {
-                action: 'block',
-                label: '처음으로',
-                blockId: '66b5751827bc5c0c5f6d66ad'
-              }
-            ]
-          }
-        }
-      ]
-    }
-  } else {
-    if(item.exclusion) {
-      outputArray = [
-        {
-          basicCard: {
-            description: '안정관리인증작업장 총점 95%이상이셔서 결과가 나온 날로부터 1년간 자가품질검사 면제 대상입니다.',
-            buttons: [
-              {
-                action: 'block',
-                label: '처음으로',
-                blockId: '66b5751827bc5c0c5f6d66ad'
-              }
-            ]
-          }
-        }
-      ]
-    } else {
-      outputArray = [
-        {
-          basicCard: {
-            description: '',
-            thumbnail: {
-              imageUrl: 'https:
-            },
-            buttons: [
-              {
-                action: 'block',
-                label: '처음으로',
-                blockId: '66b5751827bc5c0c5f6d66ad'
-              }
-            ]
-          }
-        }
-      ]
-    }
-  }
-
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: outputArray
-    }
-  });
-  
-});
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
-});
-
-module.exports = router;
-
-File: .//quality-chatbot/routes/chatbot/livestock/fstcheck/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: [
-        {
-          simpleText: {
-            text: `축산물 가공업을(를) 선택하셨군요!\n\n아래 질문들에 '예' 또는 '아니오'로 답변해주세요.📝`
-          }
-        },
-        {
-          textCard: {
-            description: '최근 1년 이내 안정관리인증작업장에 대한 조사.평가 결과 총점 95% 이상인가요?',
-            buttons: [
-              {
-                action: 'block',
-                label: '예',
-                blockId: '66bc64027712c0500c59e39a',
-                extra: {
-                  labelNo: '1번',
-                  fst: true
-                }
-              },
-              {
-                action: 'block',
-                label: '아니오',
-                blockId: '66bc64027712c0500c59e39a',
-                extra: {
-                  labelNo: '1번',
-                  fst: false
-                }
-              }
-            ]
-          }
-        }
-      ]
-    }
-  });
-});
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
-});
-
-module.exports = router;
-
-File: .//quality-chatbot/routes/chatbot/livestock/enter/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: [
-        {
-          basicCard: {
-            title: '세부 업종 선택',
-            description:
-              '축산물업에 해당되는 세부업종을 선택해주세요.',
-            thumbnail: {
-              imageUrl: 'https:
-            },
-            buttons: [
-              {
-                action: 'block',
-                label: '1번',
-                blockId: '66bc63dbd7822a7a6e895419',
-                extra: {
-                  label: '축산물 가공업자',
-                  labelNo: '1번'
-                }
-              },
-              {
-                action: 'block',
-                label: '2번',
-                blockId: '66ba21473c742d06794fd697',
-                extra: {
-                  label: '식육포장처리업 또는 식육즉석판매가공업',
-                  labelNo: '2번'
-                }
-              },
-              {
-                action: 'block',
-                label: '3번',
-                blockId: '66ba21473c742d06794fd697',
-                extra: {
-                  label: '식용란수집판매업',
-                  labelNo: '3번'
-                }
-              }
-            ]
-          }
-        }
-      ],
-      quickReplies: [
-        {
-          action: 'block',
-          label: '여기에 없어요',
-          blockId: '66c3523f2653da5a9b433279'
-        }
-      ]
-    }
-  });
-});
-
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
-});
-
-module.exports = router;
-File: .//quality-chatbot/routes/chatbot/livestock/scdcheck/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  const item = req.body.action.clientExtra;
-
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: [
-        {
-          textCard: {
-            description: '전년도에 생산된 동일 유형의 품목의 수량이 12개가 넘나요?\n\n동일 유형 품목은 예를 들어 햄류, 소시지류, 베이커류는 모두 동일 유형의 품목입니다.',
-            buttons: [
-              {
-                action: 'block',
-                label: '예',
-                blockId: '66bc642cdfbbde443b7ce810',
-                extra: {
-                  ...item,
-                  scd: true
-                }
-              },
-              {
-                action: 'block',
-                label: '아니오',
-                blockId: '66bc642cdfbbde443b7ce810',
-                extra: {
-                  ...item,
-                  scd: false
-                }
-              }
-            ]
-          }
-        }
-      ]
-    }
-  });
-});
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
-});
-
-module.exports = router;
-
-File: .//quality-chatbot/routes/chatbot/livestock/exclusion/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  const item = req.body.action.clientExtra;
-  
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: [
-        {
-          simpleText: {
-            text: `${item.label}을(를) 선택하셨군요!\n\n아래 질문들에 '예' 또는 '아니오'로 답변해주세요.📝`
-          }
-        },
-        {
-          textCard: {
-            description: `최근 1년 이내 안정관리인증작업장에 대한 조사.평가 결과 총점 95% 이상인가요?`,
-            buttons: [
-              {
-                action: 'block',
-                label: '예',
-                blockId: '66bc642cdfbbde443b7ce810',
-                extra: {
-                  labelNo: item.labelNo,
-                  exclusion: true
-                }
-              },
-              {
-                action: 'block',
-                label: '아니오',
-                blockId: '66bc642cdfbbde443b7ce810',
-                extra: {
-                  labelNo: item.labelNo,
-                  exclusion: false
-                }
-              }
-            ]
-          }
-        }
-      ]
-    }
-  });
-});
-
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
-});
-
-module.exports = router;
-
-File: .//quality-chatbot/routes/chatbot/index.js
-Content:
-const router = require('express').Router();
-
-const foodenter = require('./food/enter')
-const foodfst = require('./food/fstcheck')
-const foodscd = require('./food/scdcheck')
-const foodtrd = require('./food/trdcheck')
-const foodlast = require('./food/lastcheck')
-const foodwrap = require('./food/wrap')
-const foodresult = require('./food/result')
-
-router.use('/food/enter', foodenter)
-router.use('/food/foodfst', foodfst)
-router.use('/food/foodscd', foodscd)
-router.use('/food/foodtrd', foodtrd)
-router.use('/food/foodlast', foodlast)
-router.use('/food/foodwrap', foodwrap)
-router.use('/food/foodresult', foodresult)
-
-
-const livestockenter = require('./livestock/enter')
-const livestockexclusion = require('./livestock/exclusion')
-const livestockfst = require('./livestock/fstcheck')
-const livestockscd = require('./livestock/scdcheck')
-const livestockresult = require('./livestock/result')
-
-
-router.use('/livestock/enter', livestockenter)
-router.use('/livestock/exclusion', livestockexclusion)
-router.use('/livestock/fst', livestockfst)
-router.use('/livestock/scd', livestockscd)
-router.use('/livestock/result', livestockresult)
-
-
-const faqenter = require('./faq/enter')
-const faqquestion = require('./faq/question')
-const faqanswer = require('./faq/answer')
-
-
-router.use('/faq/enter', faqenter)
-router.use('/faq/question', faqquestion)
-router.use('/faq/answer', faqanswer)
-
-
-const institute = require('./institute')
-
-router.use('/institute', institute)
-
-
-const fee = require('./fee')
-
-router.use('/fee', fee)
-
-
-const notification = require('./notification')
-
-router.use('/notification', notification)
-
-
-const information = require('./information')
-
-router.use('/information', information)
-
-
-
-router.all('*',(req, res)=>{
-	res.status(404).send({success:false, msg:`api unknown uri ${req.path}`});
-})
-
-module.exports = router;
-File: .//quality-chatbot/routes/chatbot/food/result/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  const item = req.body.action.clientExtra;
-  
-  let descriptionParts = [];
-  let outputArray = [];
-  
-  ['entry', 'fst', 'scd', 'last'].forEach(key => {
-    if (item[key]) {
-      descriptionParts.push(item[key]);
-    }
-  });
-  
-  let description = descriptionParts.join('\n');
-  
-  if(item.wrap === undefined) {
-    
-    outputArray = [
-      {
-        basicCard: {
-          description: description,
-          thumbnail: {
-            imageUrl: 'https:
-          },
-          buttons: [
-            {
-              action: 'block',
-              label: '처음으로',
-              blockId: '66b5751827bc5c0c5f6d66ad'
-            }
-          ]
-        }
-      }
-    ];
-  } else {
-    
-    if(item.wrap) {
-      outputArray = [
-        {
-          basicCard: {
-            description: '',
-            thumbnail: {
-              imageUrl: 'https:
-            },
-            buttons: [
-              {
-                action: 'block',
-                label: '처음으로',
-                blockId: '66b5751827bc5c0c5f6d66ad'
-              }
-            ]
-          }
-        }
-      ]
-    } else if(!item.wrap) {
-      outputArray = [
-        {
-          basicCard: {
-            description: '',
-            thumbnail: {
-              imageUrl: 'https:
-            },
-            buttons: [
-              {
-                action: 'block',
-                label: '처음으로',
-                blockId: '66b5751827bc5c0c5f6d66ad'
-              }
-            ]
-          }
-        }
-      ]
-    }
-  }
-
-
-
-  
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: outputArray
-    }
-  });
-  
-});
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
-});
-
-module.exports = router;
-outputs: [
-  {
-    basicCard: {
-      title: '파킹프렌즈 챗봇',
-      description:
-        '\n안녕하세요,고객님!\n파킹프렌즈 고객센터 챗봇입니다.\n\n▶ 원하시는 문의사항을 아래 목록에서 선택해주세요.',
-      thumbnail: {
-        imageUrl: 'http:
-      },
-      buttons: [
-        {
-          action: 'webLink',
-          label: '챗봇 알아보기',
-          webLinkUrl: 'http:
-        }
-      ]
-    }
-  }
-]
-File: .//quality-chatbot/routes/chatbot/food/fstcheck/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  const item = req.body.action.clientExtra;
-  
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: [
-        {
-          simpleText: {
-            text: `${item.business}을(를) 선택하셨군요!\n\n아래 질문들에 '예' 또는 '아니오'로 답변해주세요.📝`
-          }
-        },
-        {
-          textCard: {
-            description: '작년에 HACCP 적용업소에서 검사대상 식품유형의 조사･평가 결과 95% 이상 받으셨나요?',
-            buttons: [
-              {
-                action: 'block',
-                label: '예',
-                blockId: '66ba103d3c742d06794fd4d3',
-                extra: {
-                  ...item, 
-                  fst: '하지만 작년에  HACCP 적용업소 조사･평가 결과 95% 이상 받으셔서 자가품질검사 면제 대상입니다.\n'
-                }
-              },
-              {
-                action: 'block',
-                label: '아니오',
-                blockId: '66ba103d3c742d06794fd4d3',
-                extra: {
-                  ...item,
-                  fst: null
-                }
-              }
-            ]
-          }
-        }
-      ]
-    }
-  });
-});
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
-});
-
-module.exports = router;
-
-File: .//quality-chatbot/routes/chatbot/food/enter/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  const item = req.body.action.clientExtra;
-
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: [
-        {
-          basicCard: {
-            title: '세부 업종 선택',
-            description:
-              '식품업에 해당되는 세부업종을 선택해주세요.',
-            thumbnail: {
-              imageUrl: 'https:
-            },
-            buttons: [
-              {
-                action: 'block',
-                label: '1번',
-                blockId: '66b5947591268b20d505ab3a',
-                extra: {
-                  business: '식품가공업 / 즉석판매제조 가공업',
-                  entry: '사장님의 업체는 자가품질검사 대상입니다.\n'
-                }
-              },
-              {
-                action: 'block',
-                label: '2번',
-                blockId: '66bc6146fb8580048bc66e8c',
-                extra: {
-                  business: '식품첨가물제조업자 / OEM식품 수입 판매업'
-                }
-              },
-              {
-                action: 'block',
-                label: '3번',
-                blockId: '66b57a7ab754f127a21d6726',
-                extra: {
-                  business: '식품관련 용기·포장류 제조업자',
-                }
-              }
-            ]
-          }
-        }
-      ],
-      quickReplies: [
-        {
-          action: 'block',
-          label: '여기에 없어요',
-          blockId: '66c3527f7262a477cc45447d'
-        }
-      ]
-    }
-  });
-});
-
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
-});
-
-module.exports = router;
-File: .//quality-chatbot/routes/chatbot/food/scdcheck/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  const item = req.body.action.clientExtra;
-  
-  
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: [
-        {
-          textCard: {
-            description: '사장님의 업체에서 제품을 제조하기 위해 반가공 원료식품을 수입하셨나요?\n\n예를 들어 크로와상을 만들기 전 반죽된 생지와 같은 것입니다.',
-            buttons: [
-              {
-                action: 'block',
-                label: '예',
-                blockId: '66ba10533c742d06794fd4d7',
-                extra: {
-                  ...item,
-                  scd: '반가공 원료 식품 수입 제품에 대해서도 별도의 자가품질검사를 꼭 받으셔야 해요.\n'
-                }
-              },
-              {
-                action: 'block',
-                label: '아니오',
-                blockId: '66ba10533c742d06794fd4d7',
-                extra: {
-                  ...item,
-                  scd: null
-                }
-              }
-            ]
-          }
-        }
-      ]
-    }
-  });
-});
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
-});
-
-module.exports = router;
-
-File: .//quality-chatbot/routes/chatbot/food/wrap/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  const item = req.body.action.clientExtra;
-  
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: [
-        {
-          simpleText: {
-            text: `${item.business}을(를) 선택하셨군요!\n\n아래 질문들에 '예' 또는 '아니오'로 답변해주세요.📝`
-          }
-        },
-        {
-          textCard: {
-            description: '제조하시는 용기 및 포장의 재질이 목재나 수지인가요?',
-            buttons: [
-              {
-                action: 'block',
-                label: '예',
-                blockId: '66ba1822bb533f4a219eab51',
-                extra: {
-                  wrap: true
-                }
-              },
-              {
-                action: 'block',
-                label: '아니오',
-                blockId: '66ba1822bb533f4a219eab51',
-                extra: {
-                  wrap: false
-                }
-              }
-            ]
-          }
-        }
-      ]
-    }
-  });
-});
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
-});
-
-module.exports = router;
-
-File: .//quality-chatbot/routes/chatbot/food/trdcheck/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  const item = req.body.action.clientExtra;
-  
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: [
-        {
-          textCard: {
-            description: '사장님의 업체에서 제품에 사용하기 위해 용기·포장을 수입하셨나요?',
-            buttons: [
-              {
-                action: 'block',
-                label: '예',
-                blockId: '66ba10673c742d06794fd4dc',
-                extra: {
-                  ...item,
-                }
-              },
-              {
-                action: 'block',
-                label: '아니오',
-                blockId: '66ba1822bb533f4a219eab51',
-                extra: {
-                  ...item,
-                }
-              }
-            ]
-          }
-        }
-      ]
-    }
-  });
-});
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
-});
-
-module.exports = router;
-
-File: .//quality-chatbot/routes/chatbot/food/lastcheck/index.js
-Content:
-const router = require('express').Router();
-
-router.post('/', (req, res) => {
-  const item = req.body.action.clientExtra;
-  
-  return res.send({
-    version: '2.0',
-    template: {
-      outputs: [
-        {
-          textCard: {
-            description: '포장의 재질이 목재나 수지인가요? ',
-            buttons: [
-              {
-                action: 'block',
-                label: '예',
-                blockId: '66ba1822bb533f4a219eab51',
-                extra: {
-                  ...item,
-                  last: null
-                }
-              },
-              {
-                action: 'block',
-                label: '아니오',
-                blockId: '66ba1822bb533f4a219eab51',
-                extra: {
-                  ...item,
-                  last: '목재나 수지 재질이 아닌 용기나 포장에 대해서도 자가품질검사를 받으셔야 합니다.'
-                }
-              }
-            ]
-          }
-        }
-      ]
-    }
-  });
-});
-router.all('*', (req, res) => {
-  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
-});
-
-module.exports = router;
-
-File: .//quality-chatbot/routes/users.js
-Content:
-var express = require('express');
-var router = express.Router();
-
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
-
-module.exports = router;
-
-File: .//quality-chatbot/routes/index.js
-Content:
-var express = require('express');
-var router = express.Router();
-const chatbot = require('./chatbot')
-
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-  next();
-});
-
-router.use('/chatbot', chatbot)
-
-module.exports = router;
-
-File: .//quality-chatbot/app.js
-Content:
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-
-const db = require('./config/db');
-const cors = require('cors');
-
-const app = express();
-
-const conn = db.init();
-db.connect(conn)
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-
-app.use(cors());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-module.exports = app;
-File: .//quality-admin-web/@types/redux.d.ts
+File: ./quality-admin-web/@types/redux.d.ts
 Content:
 import 'redux';
 import { Task } from 'redux-saga';
@@ -10142,7 +8913,7 @@ declare module 'redux' {
   }
 }
 
-File: .//quality-admin-web/bin/next-sever.js
+File: ./quality-admin-web/bin/next-sever.js
 Content:
 const http = require('http');
 const next = require('next');
@@ -10161,7 +8932,7 @@ nextApp
     console.log('cannot prepare next', e);
   });
 
-File: .//quality-admin-web/config/db.js
+File: ./quality-admin-web/config/db.js
 Content:
 const mysql = require('mysql2');
 
@@ -10189,7 +8960,7 @@ module.exports = {
   }
 };
 
-File: .//quality-admin-web/config/jwtMiddleware.js
+File: ./quality-admin-web/config/jwtMiddleware.js
 Content:
 const jwt = require('jsonwebtoken');
 
@@ -10222,7 +8993,7 @@ const jwtMiddleware = (req, res, next) => {
 
 module.exports = jwtMiddleware;
 
-File: .//quality-admin-web/next.config.js
+File: ./quality-admin-web/next.config.js
 Content:
 const nextConfig = {
   reactStrictMode: true,
@@ -10235,7 +9006,7 @@ const nextConfig = {
 
 module.exports = nextConfig;
 
-File: .//quality-admin-web/next-env.d.ts
+File: ./quality-admin-web/next-env.d.ts
 Content:
 
 
@@ -10243,7 +9014,7 @@ Content:
 
 
 
-File: .//quality-admin-web/type/frequencyType.ts
+File: ./quality-admin-web/type/frequencyType.ts
 Content:
 export interface FrequencyProps {
   frequencyData: FrequencyType;
@@ -10279,7 +9050,7 @@ export type AddFrequencyType = {
   frequency: string | null;
 };
 
-File: .//quality-admin-web/type/faqType.ts
+File: ./quality-admin-web/type/faqType.ts
 Content:
 export interface FaqProps {
   faqData: FaqType[];
@@ -10305,7 +9076,7 @@ export type ModalFaqType = {
   modal: boolean;
 };
 
-File: .//quality-admin-web/type/usersType.ts
+File: ./quality-admin-web/type/usersType.ts
 Content:
 export interface UsersProps {
   usersData: UsersType;
@@ -10335,7 +9106,7 @@ export type DetailUser = {
   };
 };
 
-File: .//quality-admin-web/type/commonType.ts
+File: ./quality-admin-web/type/commonType.ts
 Content:
 
 export interface TableProps {
@@ -10355,7 +9126,7 @@ export type ModalType = {
   edit: boolean;
 };
 
-File: .//quality-admin-web/type/react-dropdown.d.ts
+File: ./quality-admin-web/type/react-dropdown.d.ts
 Content:
 import { ReactNode } from 'react';
 
@@ -10384,7 +9155,7 @@ declare module 'react-dropdown' {
   export default Dropdown;
 }
 
-File: .//quality-admin-web/type/feeType.ts
+File: ./quality-admin-web/type/feeType.ts
 Content:
 export interface FeeProps {
   feeData: FeeType;
@@ -10420,7 +9191,7 @@ export type FeeDropdownType = {
   trd: boolean;
 };
 
-File: .//quality-admin-web/type/instituteType.ts
+File: ./quality-admin-web/type/instituteType.ts
 Content:
 export interface InstituteProps {
   instituteData: InstituteType;
@@ -10479,7 +9250,7 @@ export type DetailInstitute = {
   remarks: string | null;
 };
 
-File: .//quality-admin-web/schedule.js
+File: ./quality-admin-web/schedule.js
 Content:
 const db = require('./config/db');
 const axios = require('axios');
@@ -10627,7 +9398,12 @@ cron.schedule(
 
 
 
-File: .//quality-admin-web/ecosystem.config.js
+File: ./quality-admin-web/.env
+Content:
+# NEXT_PUBLIC_APP_API_KEY = "http:
+# NEXT_PUBLIC_APP_API_KEY = "http:
+NEXT_PUBLIC_APP_API_KEY = "http:
+File: ./quality-admin-web/ecosystem.config.js
 Content:
 module.exports = {
   apps: [
@@ -10651,7 +9427,7 @@ module.exports = {
   ],
 };
 
-File: .//quality-admin-web/routes/webapp/fee/index.js
+File: ./quality-admin-web/routes/webapp/fee/index.js
 Content:
 const router = require('express').Router();
 const dao = require('./dao');
@@ -10673,7 +9449,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-File: .//quality-admin-web/routes/webapp/fee/product/index.js
+File: ./quality-admin-web/routes/webapp/fee/product/index.js
 Content:
 const router = require('express').Router();
 const dao = require('./dao');
@@ -10686,7 +9462,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-File: .//quality-admin-web/routes/webapp/fee/product/dao.js
+File: ./quality-admin-web/routes/webapp/fee/product/dao.js
 Content:
 const db = require('../../../../config/db');
 const conn = db.init();
@@ -10720,7 +9496,7 @@ exports.list = (req, res) => {
 const escapeSpecialChars = (str) => {
   return str.replace(/[\\%_()]/g, '\\$&'); 
 };
-File: .//quality-admin-web/routes/webapp/fee/common/index.js
+File: ./quality-admin-web/routes/webapp/fee/common/index.js
 Content:
 const router = require('express').Router();
 const dao = require('./dao');
@@ -10733,7 +9509,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-File: .//quality-admin-web/routes/webapp/fee/common/dao.js
+File: ./quality-admin-web/routes/webapp/fee/common/dao.js
 Content:
 const db = require('../../../../config/db');
 const conn = db.init();
@@ -10759,7 +9535,7 @@ exports.list = (req, res) => {
     });
   });
 };
-File: .//quality-admin-web/routes/webapp/fee/dao.js
+File: ./quality-admin-web/routes/webapp/fee/dao.js
 Content:
 const db = require('../../../config/db');
 const conn = db.init();
@@ -10862,7 +9638,7 @@ exports.list = (req, res) => {
   });
 };
 
-File: .//quality-admin-web/routes/webapp/submit/index.js
+File: ./quality-admin-web/routes/webapp/submit/index.js
 Content:
 const router = require('express').Router();
 const dao = require('./dao');
@@ -10877,7 +9653,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-File: .//quality-admin-web/routes/webapp/submit/dao.js
+File: ./quality-admin-web/routes/webapp/submit/dao.js
 Content:
 const db = require('../../../config/db');
 const axios = require('axios');
@@ -11063,7 +9839,7 @@ const scheduleNotification = async (
   ]);
 };
 
-File: .//quality-admin-web/routes/webapp/frequency/index.js
+File: ./quality-admin-web/routes/webapp/frequency/index.js
 Content:
 const router = require('express').Router();
 const dao = require('./dao');
@@ -11078,7 +9854,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-File: .//quality-admin-web/routes/webapp/frequency/dao.js
+File: ./quality-admin-web/routes/webapp/frequency/dao.js
 Content:
 const db = require('../../../config/db');
 const conn = db.init();
@@ -11105,7 +9881,7 @@ exports.list = (req, res) => {
   });
 };
 
-File: .//quality-admin-web/routes/webapp/institute/index.js
+File: ./quality-admin-web/routes/webapp/institute/index.js
 Content:
 const router = require('express').Router();
 const dao = require('./dao');
@@ -11119,7 +9895,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-File: .//quality-admin-web/routes/webapp/institute/dao.js
+File: ./quality-admin-web/routes/webapp/institute/dao.js
 Content:
 const db = require('../../../config/db');
 const conn = db.init();
@@ -11214,7 +9990,7 @@ exports.view = (req, res) => {
   });
 };
 
-File: .//quality-admin-web/routes/webapp/index.js
+File: ./quality-admin-web/routes/webapp/index.js
 Content:
 const router = require('express').Router();
 
@@ -11236,7 +10012,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-File: .//quality-admin-web/routes/webapp/upload/index.js
+File: ./quality-admin-web/routes/webapp/upload/index.js
 Content:
 const router = require('express').Router();
 const dao = require('./dao');
@@ -11256,7 +10032,7 @@ router.all('*', (req, res) => {
 
 module.exports = router;
 
-File: .//quality-admin-web/routes/webapp/upload/dao.js
+File: ./quality-admin-web/routes/webapp/upload/dao.js
 Content:
 const axios = require('axios');
 const FormData = require('form-data');
@@ -11312,7 +10088,7 @@ exports.add = async (req, res) => {
   }
 };
 
-File: .//quality-admin-web/routes/users.js
+File: ./quality-admin-web/routes/users.js
 Content:
 var express = require('express');
 var router = express.Router();
@@ -11323,7 +10099,7 @@ router.get('/', function (req, res, next) {
 
 module.exports = router;
 
-File: .//quality-admin-web/routes/index.js
+File: ./quality-admin-web/routes/index.js
 Content:
 var express = require('express');
 var router = express.Router();
@@ -11338,7 +10114,7 @@ router.use('/webapp', webapp);
 
 module.exports = router;
 
-File: .//quality-admin-web/app.js
+File: ./quality-admin-web/app.js
 Content:
 var express = require('express');
 require('./schedule');
@@ -11368,7 +10144,7 @@ app.use('/users', usersRouter);
 
 module.exports = app;
 
-File: .//quality-admin-web/src/component/Layout/Layout.tsx
+File: ./quality-admin-web/src/component/Layout/Layout.tsx
 Content:
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -11393,7 +10169,7 @@ const LayoutBase = styled.main`
   margin: 0 auto;
 `;
 
-File: .//quality-admin-web/src/component/webapp/ResultComponent.tsx
+File: ./quality-admin-web/src/component/webapp/ResultComponent.tsx
 Content:
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
@@ -11531,7 +10307,7 @@ const CloseBtn = styled(ApplyBtn)`
   color: #373737;
 `;
 
-File: .//quality-admin-web/src/component/webapp/Fee/Fee.jsx
+File: ./quality-admin-web/src/component/webapp/Fee/Fee.jsx
 Content:
 import { useState, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -12242,7 +11018,7 @@ const SearchButton = styled.button`
   }
 `;
 
-File: .//quality-admin-web/src/component/webapp/Fee/FeeDetail.tsx
+File: ./quality-admin-web/src/component/webapp/Fee/FeeDetail.tsx
 Content:
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -12452,7 +11228,7 @@ const ResetBtn = styled(ApplyBtn)`
   color: #373737;
 `;
 
-File: .//quality-admin-web/src/component/webapp/Institute/Institute.tsx
+File: ./quality-admin-web/src/component/webapp/Institute/Institute.tsx
 Content:
 import { NextPage } from 'next';
 import { useState, useEffect, useCallback, useRef } from 'react';
@@ -12773,7 +11549,7 @@ const BtnSpan = styled.span`
   }
 `;
 
-File: .//quality-admin-web/src/component/webapp/Institute/InstituteDetail.tsx
+File: ./quality-admin-web/src/component/webapp/Institute/InstituteDetail.tsx
 Content:
 import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
@@ -12926,7 +11702,7 @@ const ApplyBtn = styled.button`
   color: #fff;
 `;
 
-File: .//quality-admin-web/src/component/webapp/OCR/ShootingPhoto.tsx
+File: ./quality-admin-web/src/component/webapp/OCR/ShootingPhoto.tsx
 Content:
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -13073,7 +11849,7 @@ const ShootingPhoto = () => {
                 ref={fileInputRef}
                 type="file"
 
-File: .//quality-admin-web/src/component/webapp/OCR/InputPhoto.tsx
+File: ./quality-admin-web/src/component/webapp/OCR/InputPhoto.tsx
 Content:
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -13219,7 +11995,7 @@ const InputPhoto = () => {
                 ref={fileInputRef}
                 type="file"
 
-File: .//quality-admin-web/src/component/webapp/Application/Guide/ApplicationGuide.tsx
+File: ./quality-admin-web/src/component/webapp/Application/Guide/ApplicationGuide.tsx
 Content:
 import React, { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
@@ -13544,7 +12320,7 @@ const ModalBtn = styled.button`
   border-radius: 8px;
 `;
 
-File: .//quality-admin-web/src/component/webapp/Application/Application.tsx
+File: ./quality-admin-web/src/component/webapp/Application/Application.tsx
 Content:
 import { useState } from 'react';
 import { useRouter } from 'next/router';
@@ -13718,7 +12494,7 @@ const CloseBtn = styled(ApplyBtn)`
   color: #373737;
 `;
 
-File: .//quality-admin-web/src/component/webapp/Application/SubmitDetail.tsx
+File: ./quality-admin-web/src/component/webapp/Application/SubmitDetail.tsx
 Content:
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
@@ -13860,7 +12636,7 @@ const CloseBtn = styled(ApplyBtn)`
   color: #373737;
 `;
 
-File: .//quality-admin-web/src/component/webapp/Application/Info.tsx
+File: ./quality-admin-web/src/component/webapp/Application/Info.tsx
 Content:
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
@@ -13982,7 +12758,7 @@ const RegisterButton = styled.button`
   cursor: pointer;
 `;
 
-File: .//quality-admin-web/src/component/webapp/Application/AppForm.tsx
+File: ./quality-admin-web/src/component/webapp/Application/AppForm.tsx
 Content:
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
@@ -14374,7 +13150,7 @@ const ToastP = styled.p`
   color: #601f22;
 `;
 
-File: .//quality-admin-web/src/component/webapp/Application/SubmitForm.jsx
+File: ./quality-admin-web/src/component/webapp/Application/SubmitForm.jsx
 Content:
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -14818,7 +13594,7 @@ const ModalBtn = styled.button`
   color: #fff;
 `;
 
-File: .//quality-admin-web/src/component/webapp/Application/Modal/Shooting.tsx
+File: ./quality-admin-web/src/component/webapp/Application/Modal/Shooting.tsx
 Content:
 import { useState } from 'react';
 import { useRouter } from 'next/router';
@@ -14939,7 +13715,7 @@ const CloseBtn = styled(ApplyBtn)`
   color: #373737;
 `;
 
-File: .//quality-admin-web/src/component/webapp/Application/Modal/Picture.tsx
+File: ./quality-admin-web/src/component/webapp/Application/Modal/Picture.tsx
 Content:
 import { useState } from 'react';
 import { useRouter } from 'next/router';
@@ -15059,7 +13835,7 @@ const CloseBtn = styled(ApplyBtn)`
   color: #373737;
 `;
 
-File: .//quality-admin-web/src/component/webapp/Application/SelectForm.jsx
+File: ./quality-admin-web/src/component/webapp/Application/SelectForm.jsx
 Content:
 import { NextPage } from 'next';
 import { useState, useCallback, useEffect } from 'react';
@@ -15386,7 +14162,7 @@ const ReturnBtn = styled(ApplyBtn)`
   color: #373737;
 `;
 
-File: .//quality-admin-web/src/component/webapp/Application/Form.tsx
+File: ./quality-admin-web/src/component/webapp/Application/Form.tsx
 Content:
 import { useCallback, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -15629,7 +14405,7 @@ const ToastP = styled.p`
   color: #601f22;
 `;
 
-File: .//quality-admin-web/src/component/Common/BottomSheet.tsx
+File: ./quality-admin-web/src/component/Common/BottomSheet.tsx
 Content:
 import { NextPage } from 'next';
 import { useState, useRef, useCallback, useEffect } from 'react';
@@ -15765,7 +14541,7 @@ const ChildrenContainer = styled.div<{ isopen: boolean }>`
   display: ${(props) => (props.isopen ? 'block' : 'none')};
 `;
 
-File: .//quality-admin-web/src/component/Common/Dropdown/InputDropdown.tsx
+File: ./quality-admin-web/src/component/Common/Dropdown/InputDropdown.tsx
 Content:
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
@@ -15898,7 +14674,7 @@ const ArrowIcon = styled(IoIosArrowDown)`
   font-size: 18px;
 `;
 
-File: .//quality-admin-web/src/component/Common/Dropdown/StyledDropdown.tsx
+File: ./quality-admin-web/src/component/Common/Dropdown/StyledDropdown.tsx
 Content:
 
 import styled from 'styled-components';
@@ -16004,7 +14780,7 @@ const ArrowIcon = styled(IoIosArrowDown)`
   font-size: 18px;
 `;
 
-File: .//quality-admin-web/src/component/Common/Dropdown/Dropdown.tsx
+File: ./quality-admin-web/src/component/Common/Dropdown/Dropdown.tsx
 Content:
 
 import { useRouter } from 'next/router';
@@ -16127,7 +14903,7 @@ const ArrowIcon = styled(IoIosArrowDown)`
   font-size: 18px;
 `;
 
-File: .//quality-admin-web/src/component/Common/Card.tsx
+File: ./quality-admin-web/src/component/Common/Card.tsx
 Content:
 import { NextPage } from 'next';
 import styled from 'styled-components';
@@ -16152,7 +14928,7 @@ const CardBase = styled.div`
   overflow-y: scroll;
 `;
 
-File: .//quality-admin-web/src/component/Common/Buttons/ApplyBtn.tsx
+File: ./quality-admin-web/src/component/Common/Buttons/ApplyBtn.tsx
 Content:
 import styled from 'styled-components';
 
@@ -16184,7 +14960,7 @@ const ApplyButton = styled.button`
   }
 `;
 
-File: .//quality-admin-web/src/component/Common/Buttons/RefreshBtn.tsx
+File: ./quality-admin-web/src/component/Common/Buttons/RefreshBtn.tsx
 Content:
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
@@ -16221,7 +14997,7 @@ const RefreshIcon = styled(IoCloseCircle)`
   color: #757575;
 `;
 
-File: .//quality-admin-web/src/component/Common/TableComponent.tsx
+File: ./quality-admin-web/src/component/Common/TableComponent.tsx
 Content:
 import { NextPage } from 'next';
 import styled from 'styled-components';
@@ -16406,7 +15182,7 @@ const DetailBtn = styled.button`
   border-radius: 6px;
 `;
 
-File: .//quality-admin-web/src/component/Common/Calendar.tsx
+File: ./quality-admin-web/src/component/Common/Calendar.tsx
 Content:
 import React, { useState, forwardRef } from 'react';
 import styled from 'styled-components';
@@ -16597,7 +15373,7 @@ const ArrowIcon = styled(IoIosArrowDown)`
   font-size: 18px;
 `;
 
-File: .//quality-admin-web/src/component/Common/MobileModal.tsx
+File: ./quality-admin-web/src/component/Common/MobileModal.tsx
 Content:
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
@@ -16635,7 +15411,7 @@ const ModalInner = styled.div`
   border-radius: 5px;
 `;
 
-File: .//quality-admin-web/src/component/Common/Table/CheckTable.tsx
+File: ./quality-admin-web/src/component/Common/Table/CheckTable.tsx
 Content:
 import { NextPage } from 'next';
 import styled from 'styled-components';
@@ -16700,7 +15476,7 @@ const StyledTableCellHead = styled(TableCell)`
   }
 `;
 
-File: .//quality-admin-web/src/component/Common/Table/CommonTable.tsx
+File: ./quality-admin-web/src/component/Common/Table/CommonTable.tsx
 Content:
 import { NextPage } from 'next';
 import styled from 'styled-components';
@@ -16761,7 +15537,7 @@ const StyledTableCellHead = styled(TableCell)`
   }
 `;
 
-File: .//quality-admin-web/src/component/Common/Loading.tsx
+File: ./quality-admin-web/src/component/Common/Loading.tsx
 Content:
 import styled from 'styled-components';
 
@@ -16798,7 +15574,7 @@ const LoadingInner = styled.div`
 
 const Spinner = styled.img``;
 
-File: .//quality-admin-web/src/component/Common/Modal.tsx
+File: ./quality-admin-web/src/component/Common/Modal.tsx
 Content:
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
@@ -16832,7 +15608,7 @@ const ModalInner = styled.div`
   border-radius: 5px;
 `;
 
-File: .//quality-admin-web/src/component/Common/Toast.tsx
+File: ./quality-admin-web/src/component/Common/Toast.tsx
 Content:
 import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
@@ -16923,7 +15699,7 @@ const CloseIcon = styled(VscChromeClose)`
   font-size: 10px;
 `;
 
-File: .//quality-admin-web/src/component/Common/SelectCategory.tsx
+File: ./quality-admin-web/src/component/Common/SelectCategory.tsx
 Content:
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -17002,7 +15778,7 @@ const CategoryItem = styled.li<{ isQuery: boolean }>`
   cursor: pointer;
 `;
 
-File: .//quality-admin-web/src/utils/handleSearch.ts
+File: ./quality-admin-web/src/utils/handleSearch.ts
 Content:
 import { Router, useRouter } from 'next/router';
 import { useCallback } from 'react';
@@ -17028,7 +15804,7 @@ const handleSearch = () => {
 
 export default handleSearch;
 
-File: .//quality-admin-web/src/styles/globalstyles.ts
+File: ./quality-admin-web/src/styles/globalstyles.ts
 Content:
 import { createGlobalStyle } from 'styled-components';
 import Reset from 'styled-reset';
@@ -17105,7 +15881,7 @@ a, button, input {
 
 export default GlobalStyles;
 
-File: .//quality-admin-web/src/styles/theme.ts
+File: ./quality-admin-web/src/styles/theme.ts
 Content:
 const theme = {
   
@@ -17140,7 +15916,7 @@ const theme = {
 
 export default theme;
 
-File: .//quality-admin-web/src/hooks/useCheckbox.ts
+File: ./quality-admin-web/src/hooks/useCheckbox.ts
 Content:
 import { useState, useEffect } from 'react';
 
@@ -17198,7 +15974,7 @@ const useCheckbox = (datas: { id: number }[]) => {
 
 export default useCheckbox;
 
-File: .//quality-admin-web/src/pages/index.tsx
+File: ./quality-admin-web/src/pages/index.tsx
 Content:
 import { NextPage } from 'next';
 
@@ -17208,7 +15984,7 @@ const Home: NextPage = () => {
 
 export default Home;
 
-File: .//quality-admin-web/src/pages/webapp/application.tsx
+File: ./quality-admin-web/src/pages/webapp/application.tsx
 Content:
 import { NextPage } from 'next';
 
@@ -17220,7 +15996,7 @@ const application: NextPage = () => {
 
 export default application;
 
-File: .//quality-admin-web/src/pages/webapp/info.tsx
+File: ./quality-admin-web/src/pages/webapp/info.tsx
 Content:
 import { NextPage } from 'next';
 import Info from '@/component/webapp/Application/Info';
@@ -17231,7 +16007,7 @@ const info: NextPage = () => {
 
 export default info;
 
-File: .//quality-admin-web/src/pages/webapp/institute.tsx
+File: ./quality-admin-web/src/pages/webapp/institute.tsx
 Content:
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next';
 import axios from 'axios';
@@ -17276,7 +16052,7 @@ export const getServerSideProps: GetServerSideProps = async (
   };
 };
 
-File: .//quality-admin-web/src/pages/webapp/result.tsx
+File: ./quality-admin-web/src/pages/webapp/result.tsx
 Content:
 import { NextPage } from 'next';
 import ResultComponent from '../../component/webapp/ResultComponent';
@@ -17287,7 +16063,7 @@ const result: NextPage = () => {
 
 export default result;
 
-File: .//quality-admin-web/src/pages/webapp/appform.tsx
+File: ./quality-admin-web/src/pages/webapp/appform.tsx
 Content:
 import { NextPage } from 'next';
 
@@ -17299,7 +16075,7 @@ const appform: NextPage = () => {
 
 export default appform;
 
-File: .//quality-admin-web/src/pages/webapp/fee.tsx
+File: ./quality-admin-web/src/pages/webapp/fee.tsx
 Content:
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next';
 import axios from 'axios';
@@ -17352,7 +16128,7 @@ export const getServerSideProps: GetServerSideProps = async (
   };
 };
 
-File: .//quality-admin-web/src/pages/webapp/submit.tsx
+File: ./quality-admin-web/src/pages/webapp/submit.tsx
 Content:
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next';
 import axios from 'axios';
@@ -17407,7 +16183,7 @@ export const getServerSideProps: GetServerSideProps = async (
   }
 };
 
-File: .//quality-admin-web/src/pages/webapp/select.tsx
+File: ./quality-admin-web/src/pages/webapp/select.tsx
 Content:
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next';
 import axios from 'axios';
@@ -17460,7 +16236,7 @@ export const getServerSideProps: GetServerSideProps = async (
   };
 };
 
-File: .//quality-admin-web/src/pages/webapp/form.tsx
+File: ./quality-admin-web/src/pages/webapp/form.tsx
 Content:
 import { NextPage } from 'next';
 
@@ -17471,7 +16247,7 @@ const form: NextPage = () => {
 
 export default form;
 
-File: .//quality-admin-web/src/pages/ocr/photo.tsx
+File: ./quality-admin-web/src/pages/ocr/photo.tsx
 Content:
 import { NextPage } from 'next';
 import InputPhoto from '@/component/webapp/OCR/InputPhoto';
@@ -17482,7 +16258,7 @@ const photo: NextPage = () => {
 
 export default photo;
 
-File: .//quality-admin-web/src/pages/ocr/shoot.tsx
+File: ./quality-admin-web/src/pages/ocr/shoot.tsx
 Content:
 import { NextPage } from 'next';
 import ShootingPhoto from '@/component/webapp/OCR/ShootingPhoto';
@@ -17493,7 +16269,7 @@ const shoot: NextPage = () => {
 
 export default shoot;
 
-File: .//quality-admin-web/src/pages/_document.tsx
+File: ./quality-admin-web/src/pages/_document.tsx
 Content:
 import Document, {
   Html,
@@ -17548,7 +16324,7 @@ class MyDocument extends Document {
 
 export default MyDocument;
 
-File: .//quality-admin-web/src/pages/_app.tsx
+File: ./quality-admin-web/src/pages/_app.tsx
 Content:
 
 import { Provider } from 'react-redux';
@@ -17611,7 +16387,7 @@ const App: NextPage<AppProps> = ({
 
 export default wrapper.withRedux(App);
 
-File: .//quality-admin-web/src/redux/modules/common.ts
+File: ./quality-admin-web/src/redux/modules/common.ts
 Content:
 import { AnyAction } from 'redux';
 
@@ -17665,7 +16441,7 @@ export default function common(state = initialState, action: AnyAction) {
   }
 }
 
-File: .//quality-admin-web/src/redux/modules/rootSaga.ts
+File: ./quality-admin-web/src/redux/modules/rootSaga.ts
 Content:
 import { all } from 'redux-saga/effects';
 
@@ -17673,7 +16449,7 @@ export default function* rootSaga() {
   yield all([]);
 }
 
-File: .//quality-admin-web/src/redux/modules/reducer.ts
+File: ./quality-admin-web/src/redux/modules/reducer.ts
 Content:
 import { HYDRATE } from 'next-redux-wrapper';
 import { combineReducers } from 'redux';
@@ -17697,7 +16473,7 @@ const rootReducer = (state: any, action: any) => {
 export type RootState = ReturnType<typeof rootReducer>;
 export default rootReducer;
 
-File: .//quality-admin-web/src/redux/store.ts
+File: ./quality-admin-web/src/redux/store.ts
 Content:
 import {
   applyMiddleware,
@@ -17743,3 +16519,1241 @@ const wrapper = createWrapper(configureStore, {
 
 export default wrapper;
 
+File: ./quality-chatbot/config/db.js
+Content:
+const mysql = require('mysql2');
+
+const db_info = {
+  host: '13.209.138.233',
+  port: '3306',
+  user: 'root',
+  password: 'chatbot',
+  database: 'qcbot'
+};
+
+module.exports = {
+  init() {
+    return mysql.createConnection(db_info);
+  },
+  connect(conn) {
+    conn.connect(function (err) {
+      if (err) console.error(`mysql connection error : ${err}`);
+      else console.log('mysql is connected successfully!');
+    });
+  }
+};
+File: ./quality-chatbot/routes/chatbot/information/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          carousel: {
+            type: 'basicCard',
+            items: [
+              {
+                description: "자가품질검사 수수료 및 위탁 검사기관 안내, 검사시기를 알려드리는 알림톡과 검사 절차 안내, 자주 묻는 질문의 궁금증을 해결해 드려요",
+                thumbnail: {
+                  imageUrl: 'https:
+                }
+              },
+              {
+                description: "'검사 알림', '검사 절차', '수수료'처럼 간단 명료하게 질문해주세요",
+                thumbnail: {
+                  imageUrl: 'https:
+                }
+              },
+              {
+                description: "'메뉴', '처음으로'라고 입력하시면 첫 화면으로 이동하여 챗봇 메뉴를 이용하실 수 있습니다",
+                thumbnail: {
+                  imageUrl: 'https:
+                }
+              },
+              {
+                description: "개인정보(성함/연락처/주민번호 등)나 이미지/동영상은 입력하지 말아주세요. 챗봇에서는 확인이 어렵습니다",
+                thumbnail: {
+                  imageUrl: 'https:
+                }
+              },
+            ]
+          }
+        }
+      ]
+    }
+  });
+});
+
+
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'information unknown uri ${req.path}' });
+});
+
+module.exports = router;
+
+File: ./quality-chatbot/routes/chatbot/fee/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          basicCard: {
+            title: '',
+            description:
+              `\n안녕하세요! 자가품질검사 수수료를 계산해 드립니다. 아래 링크를 통해 필요한 수수료를 확인해 보세요. 
+              \n\n수수료는 식약처 기준에 따라 산정되며, 재료비나 장비 구매 비용 차이로 인해 수수료가 달라질 수 있습니다.`,
+            thumbnail: {
+              imageUrl: 'https:
+            },
+            buttons: [
+              {
+                action: 'webLink',
+                label: '👉 수수료 계산하기',
+                webLinkUrl: 'http:
+              }
+            ]
+          }
+        }
+      ],
+      quickReplies: [
+        {
+          action: 'block',
+          label: '챗봇 도움말',
+          blockId: '66d55c20dee2735433531035',
+        },
+      ]
+    }
+  });
+});
+
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'fee unknown uri ${req.path}' });
+});
+
+module.exports = router;
+File: ./quality-chatbot/routes/chatbot/notification/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          basicCard: {
+            title: '',
+            description:
+              `\n알림톡 신청을 해주셔서 감사합니다!
+              \n\n자가품질검사 알림톡 서비스를 시작하기 전에 업종과 취급 품목에 대한 정보가 필요합니다.
+              \n\n아래 링크에서 사업자 등록증을 첨부하시거나 정보를 직접 입력하는 방법 중에서 선택해주세요. 
+              `,
+            thumbnail: {
+              imageUrl: 'https:
+            },
+            buttons: [
+              {
+                action: 'webLink',
+                label: '👉 알림톡 신청하기',
+                webLinkUrl: 'http:
+              }
+            ]
+          }
+        }
+      ]
+    }
+  });
+});
+
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
+});
+
+module.exports = router;
+File: ./quality-chatbot/routes/chatbot/faq/answer/index.js
+Content:
+const router = require('express').Router();
+const db = require('../../../../config/db');
+const conn = db.init();
+
+
+router.post('/', (req, res) => {
+  const item = req.body.action.clientExtra;
+
+  sql = `SELECT answer FROM qcbot.tbl_faq WHERE id = ?;`
+  conn.query(sql,[item.id], (err, row) => {
+    if(err) throw err;
+
+    return res.send({
+      version: '2.0',
+      template: {
+        outputs: [
+          {
+            simpleText: {
+              text: row[0].answer
+            }
+          },
+          {
+            basicCard: {
+              description: '도움이 되셨나요?',
+              buttons: [
+                {
+                  action: 'block',
+                  label: '예',
+                  blockId: '66b5751827bc5c0c5f6d66ad'
+                },
+                {
+                  action: 'block',
+                  label: '아니오',
+                  blockId: '66b5751827bc5c0c5f6d66ad'
+                }
+              ]
+            }
+          }
+        ],
+      }
+    });
+  })
+});
+
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
+});
+
+module.exports = router;
+File: ./quality-chatbot/routes/chatbot/faq/enter/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          basicCard: {
+            title: '자주 묻는 질문',
+            description:
+              '아래 버튼을 누르고 무엇이든 물어보세요',
+            thumbnail: {
+              imageUrl: 'https:
+            },
+            buttons: [
+              {
+                action: 'block',
+                label: '질문하기',
+                blockId: '66c05541e2ce1251f181e7ea'
+              }
+            ]
+          }
+        }
+      ]
+    }
+  });
+});
+
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
+});
+
+module.exports = router;
+File: ./quality-chatbot/routes/chatbot/faq/question/index.js
+Content:
+const router = require('express').Router();
+const db = require('../../../../config/db');
+const conn = db.init();
+
+
+const generateFaqResponse = (item, callback) => {
+  const sql = `SELECT question, id FROM qcbot.tbl_faq WHERE ? LIKE CONCAT('%', keyword, '%');`;
+
+  conn.query(sql, [item], (err, rows) => {
+    if (err) return callback(err);
+
+    const carouselItems = rows.map(data => ({
+      description: data.question,
+      buttons: [
+        {
+          action: 'block',
+          label: '답변보기',
+          blockId: '66c062d6323697599a6edba4',
+          extra: {
+            id: data.id
+          }
+        },
+      ]
+    }));
+
+    const outputArray = [
+      {
+        simpleImage: {
+          imageUrl: 'https:
+          altText: '아래 추천 질문을 보시고 해당되는 내용의 답변보기 버튼을 클릭해 주세요'
+        }
+      },
+      {
+        carousel: {
+          type: 'basicCard',
+          items: carouselItems
+        }
+      }
+    ];
+
+    callback(null, outputArray);
+  });
+};
+
+
+router.post('/', (req, res) => {
+  const item = req.body.action.detailParams.sys_text.value;
+
+  generateFaqResponse(item, (err, outputArray) => {
+    if (err) {
+      return res.status(500).send({ success: false, msg: 'Internal Server Error' });
+    }
+
+    return res.send({
+      version: '2.0',
+      template: {
+        outputs: outputArray,
+      }
+    });
+  });
+});
+
+
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: `unknown uri ${req.path}` });
+});
+
+module.exports = router;
+
+File: ./quality-chatbot/routes/chatbot/institute/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          basicCard: {
+            title: '',
+            description:
+              '\n자가품질검사 검사 기관을 안내해 드리겠습니다.\n\n아래 버튼을 클릭해주세요',
+            thumbnail: {
+              imageUrl: 'https:
+            },
+            buttons: [
+              {
+                action: 'webLink',
+                label: '👉 시험 검사기관 조회',
+                webLinkUrl: 'http:
+              }
+            ]
+          }
+        }
+      ],
+      quickReplies: [
+        {
+          action: 'block',
+          label: '챗봇 도움말',
+          blockId: '66d55c20dee2735433531035',
+        },
+      ]
+    }
+  });
+});
+
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'institute unknown uri ${req.path}' });
+});
+
+module.exports = router;
+File: ./quality-chatbot/routes/chatbot/livestock/result/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  const item = req.body.action.clientExtra;
+  let outputArray = null;
+
+  if(item.labelNo === '1번') {
+    if(item.fst && item.scd) {
+      outputArray = [
+        {
+          basicCard: {
+            description: '안정관리인증작업장 총점 95%이상이셔서 결과가 나온 날로부터 1년간 자가품질검사 면제 대상입니다. 최소 6개 이상, 그 중 생산량이 많은 상위 3개를 포함해서 검사를 진행해주세요.',
+            buttons: [
+              {
+                action: 'block',
+                label: '처음으로',
+                blockId: '66b5751827bc5c0c5f6d66ad'
+              }
+            ]
+          }
+        }
+      ]
+    } else if(!item.fst && item.scd) {
+      outputArray = [
+        {
+          basicCard: {
+            description: '최소 6개 이상, 그 중 생산량이 많은 상위 3개를 포함해서 검사를 진행해주세요.',
+            buttons: [
+              {
+                action: 'block',
+                label: '처음으로',
+                blockId: '66b5751827bc5c0c5f6d66ad'
+              }
+            ]
+          }
+        }
+      ]
+    } else if(!item.fst && !item.scd) {
+      outputArray = [
+        {
+          basicCard: {
+            description: '전체 품목의 절반 이상을 검사하셔야 합니다.\n소수점은 반올림 한 값입니다.\n\n예를 들어 동일 유형의 품목이 7개라면 4개의 검사를 받으셔야 해요',
+            buttons: [
+              {
+                action: 'block',
+                label: '처음으로',
+                blockId: '66b5751827bc5c0c5f6d66ad'
+              }
+            ]
+          }
+        }
+      ]
+    } else {
+      outputArray = [
+        {
+          basicCard: {
+            description: '',
+            thumbnail: {
+              imageUrl: 'https:
+            },
+            buttons: [
+              {
+                action: 'block',
+                label: '처음으로',
+                blockId: '66b5751827bc5c0c5f6d66ad'
+              }
+            ]
+          }
+        }
+      ]
+    }
+  } else {
+    if(item.exclusion) {
+      outputArray = [
+        {
+          basicCard: {
+            description: '안정관리인증작업장 총점 95%이상이셔서 결과가 나온 날로부터 1년간 자가품질검사 면제 대상입니다.',
+            buttons: [
+              {
+                action: 'block',
+                label: '처음으로',
+                blockId: '66b5751827bc5c0c5f6d66ad'
+              }
+            ]
+          }
+        }
+      ]
+    } else {
+      outputArray = [
+        {
+          basicCard: {
+            description: '',
+            thumbnail: {
+              imageUrl: 'https:
+            },
+            buttons: [
+              {
+                action: 'block',
+                label: '처음으로',
+                blockId: '66b5751827bc5c0c5f6d66ad'
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: outputArray
+    }
+  });
+  
+});
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
+});
+
+module.exports = router;
+
+File: ./quality-chatbot/routes/chatbot/livestock/fstcheck/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          simpleText: {
+            text: `축산물 가공업을(를) 선택하셨군요!\n\n아래 질문들에 '예' 또는 '아니오'로 답변해주세요.📝`
+          }
+        },
+        {
+          textCard: {
+            description: '최근 1년 이내 안정관리인증작업장에 대한 조사.평가 결과 총점 95% 이상인가요?',
+            buttons: [
+              {
+                action: 'block',
+                label: '예',
+                blockId: '66bc64027712c0500c59e39a',
+                extra: {
+                  labelNo: '1번',
+                  fst: true
+                }
+              },
+              {
+                action: 'block',
+                label: '아니오',
+                blockId: '66bc64027712c0500c59e39a',
+                extra: {
+                  labelNo: '1번',
+                  fst: false
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  });
+});
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
+});
+
+module.exports = router;
+
+File: ./quality-chatbot/routes/chatbot/livestock/enter/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          basicCard: {
+            title: '세부 업종 선택',
+            description:
+              '축산물업에 해당되는 세부업종을 선택해주세요.',
+            thumbnail: {
+              imageUrl: 'https:
+            },
+            buttons: [
+              {
+                action: 'block',
+                label: '1번',
+                blockId: '66bc63dbd7822a7a6e895419',
+                extra: {
+                  label: '축산물 가공업자',
+                  labelNo: '1번'
+                }
+              },
+              {
+                action: 'block',
+                label: '2번',
+                blockId: '66ba21473c742d06794fd697',
+                extra: {
+                  label: '식육포장처리업 또는 식육즉석판매가공업',
+                  labelNo: '2번'
+                }
+              },
+              {
+                action: 'block',
+                label: '3번',
+                blockId: '66ba21473c742d06794fd697',
+                extra: {
+                  label: '식용란수집판매업',
+                  labelNo: '3번'
+                }
+              }
+            ]
+          }
+        }
+      ],
+      quickReplies: [
+        {
+          action: 'block',
+          label: '여기에 없어요',
+          blockId: '66c3523f2653da5a9b433279'
+        }
+      ]
+    }
+  });
+});
+
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
+});
+
+module.exports = router;
+File: ./quality-chatbot/routes/chatbot/livestock/scdcheck/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  const item = req.body.action.clientExtra;
+
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          textCard: {
+            description: '전년도에 생산된 동일 유형의 품목의 수량이 12개가 넘나요?\n\n동일 유형 품목은 예를 들어 햄류, 소시지류, 베이커류는 모두 동일 유형의 품목입니다.',
+            buttons: [
+              {
+                action: 'block',
+                label: '예',
+                blockId: '66bc642cdfbbde443b7ce810',
+                extra: {
+                  ...item,
+                  scd: true
+                }
+              },
+              {
+                action: 'block',
+                label: '아니오',
+                blockId: '66bc642cdfbbde443b7ce810',
+                extra: {
+                  ...item,
+                  scd: false
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  });
+});
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
+});
+
+module.exports = router;
+
+File: ./quality-chatbot/routes/chatbot/livestock/exclusion/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  const item = req.body.action.clientExtra;
+  
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          simpleText: {
+            text: `${item.label}을(를) 선택하셨군요!\n\n아래 질문들에 '예' 또는 '아니오'로 답변해주세요.📝`
+          }
+        },
+        {
+          textCard: {
+            description: `최근 1년 이내 안정관리인증작업장에 대한 조사.평가 결과 총점 95% 이상인가요?`,
+            buttons: [
+              {
+                action: 'block',
+                label: '예',
+                blockId: '66bc642cdfbbde443b7ce810',
+                extra: {
+                  labelNo: item.labelNo,
+                  exclusion: true
+                }
+              },
+              {
+                action: 'block',
+                label: '아니오',
+                blockId: '66bc642cdfbbde443b7ce810',
+                extra: {
+                  labelNo: item.labelNo,
+                  exclusion: false
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  });
+});
+
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
+});
+
+module.exports = router;
+
+File: ./quality-chatbot/routes/chatbot/index.js
+Content:
+const router = require('express').Router();
+
+const foodenter = require('./food/enter')
+const foodfst = require('./food/fstcheck')
+const foodscd = require('./food/scdcheck')
+const foodtrd = require('./food/trdcheck')
+const foodlast = require('./food/lastcheck')
+const foodwrap = require('./food/wrap')
+const foodresult = require('./food/result')
+
+router.use('/food/enter', foodenter)
+router.use('/food/foodfst', foodfst)
+router.use('/food/foodscd', foodscd)
+router.use('/food/foodtrd', foodtrd)
+router.use('/food/foodlast', foodlast)
+router.use('/food/foodwrap', foodwrap)
+router.use('/food/foodresult', foodresult)
+
+
+const livestockenter = require('./livestock/enter')
+const livestockexclusion = require('./livestock/exclusion')
+const livestockfst = require('./livestock/fstcheck')
+const livestockscd = require('./livestock/scdcheck')
+const livestockresult = require('./livestock/result')
+
+
+router.use('/livestock/enter', livestockenter)
+router.use('/livestock/exclusion', livestockexclusion)
+router.use('/livestock/fst', livestockfst)
+router.use('/livestock/scd', livestockscd)
+router.use('/livestock/result', livestockresult)
+
+
+const faqenter = require('./faq/enter')
+const faqquestion = require('./faq/question')
+const faqanswer = require('./faq/answer')
+
+
+router.use('/faq/enter', faqenter)
+router.use('/faq/question', faqquestion)
+router.use('/faq/answer', faqanswer)
+
+
+const institute = require('./institute')
+
+router.use('/institute', institute)
+
+
+const fee = require('./fee')
+
+router.use('/fee', fee)
+
+
+const notification = require('./notification')
+
+router.use('/notification', notification)
+
+
+const information = require('./information')
+
+router.use('/information', information)
+
+
+
+router.all('*',(req, res)=>{
+	res.status(404).send({success:false, msg:`api unknown uri ${req.path}`});
+})
+
+module.exports = router;
+File: ./quality-chatbot/routes/chatbot/food/result/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  const item = req.body.action.clientExtra;
+  
+  let descriptionParts = [];
+  let outputArray = [];
+  
+  ['entry', 'fst', 'scd', 'last'].forEach(key => {
+    if (item[key]) {
+      descriptionParts.push(item[key]);
+    }
+  });
+  
+  let description = descriptionParts.join('\n');
+  
+  if(item.wrap === undefined) {
+    
+    outputArray = [
+      {
+        basicCard: {
+          description: description,
+          thumbnail: {
+            imageUrl: 'https:
+          },
+          buttons: [
+            {
+              action: 'block',
+              label: '처음으로',
+              blockId: '66b5751827bc5c0c5f6d66ad'
+            }
+          ]
+        }
+      }
+    ];
+  } else {
+    
+    if(item.wrap) {
+      outputArray = [
+        {
+          basicCard: {
+            description: '',
+            thumbnail: {
+              imageUrl: 'https:
+            },
+            buttons: [
+              {
+                action: 'block',
+                label: '처음으로',
+                blockId: '66b5751827bc5c0c5f6d66ad'
+              }
+            ]
+          }
+        }
+      ]
+    } else if(!item.wrap) {
+      outputArray = [
+        {
+          basicCard: {
+            description: '',
+            thumbnail: {
+              imageUrl: 'https:
+            },
+            buttons: [
+              {
+                action: 'block',
+                label: '처음으로',
+                blockId: '66b5751827bc5c0c5f6d66ad'
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+
+
+
+  
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: outputArray
+    }
+  });
+  
+});
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
+});
+
+module.exports = router;
+outputs: [
+  {
+    basicCard: {
+      title: '파킹프렌즈 챗봇',
+      description:
+        '\n안녕하세요,고객님!\n파킹프렌즈 고객센터 챗봇입니다.\n\n▶ 원하시는 문의사항을 아래 목록에서 선택해주세요.',
+      thumbnail: {
+        imageUrl: 'http:
+      },
+      buttons: [
+        {
+          action: 'webLink',
+          label: '챗봇 알아보기',
+          webLinkUrl: 'http:
+        }
+      ]
+    }
+  }
+]
+File: ./quality-chatbot/routes/chatbot/food/fstcheck/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  const item = req.body.action.clientExtra;
+  
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          simpleText: {
+            text: `${item.business}을(를) 선택하셨군요!\n\n아래 질문들에 '예' 또는 '아니오'로 답변해주세요.📝`
+          }
+        },
+        {
+          textCard: {
+            description: '작년에 HACCP 적용업소에서 검사대상 식품유형의 조사･평가 결과 95% 이상 받으셨나요?',
+            buttons: [
+              {
+                action: 'block',
+                label: '예',
+                blockId: '66ba103d3c742d06794fd4d3',
+                extra: {
+                  ...item, 
+                  fst: '하지만 작년에  HACCP 적용업소 조사･평가 결과 95% 이상 받으셔서 자가품질검사 면제 대상입니다.\n'
+                }
+              },
+              {
+                action: 'block',
+                label: '아니오',
+                blockId: '66ba103d3c742d06794fd4d3',
+                extra: {
+                  ...item,
+                  fst: null
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  });
+});
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
+});
+
+module.exports = router;
+
+File: ./quality-chatbot/routes/chatbot/food/enter/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  const item = req.body.action.clientExtra;
+
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          basicCard: {
+            title: '세부 업종 선택',
+            description:
+              '식품업에 해당되는 세부업종을 선택해주세요.',
+            thumbnail: {
+              imageUrl: 'https:
+            },
+            buttons: [
+              {
+                action: 'block',
+                label: '1번',
+                blockId: '66b5947591268b20d505ab3a',
+                extra: {
+                  business: '식품가공업 / 즉석판매제조 가공업',
+                  entry: '사장님의 업체는 자가품질검사 대상입니다.\n'
+                }
+              },
+              {
+                action: 'block',
+                label: '2번',
+                blockId: '66bc6146fb8580048bc66e8c',
+                extra: {
+                  business: '식품첨가물제조업자 / OEM식품 수입 판매업'
+                }
+              },
+              {
+                action: 'block',
+                label: '3번',
+                blockId: '66b57a7ab754f127a21d6726',
+                extra: {
+                  business: '식품관련 용기·포장류 제조업자',
+                }
+              }
+            ]
+          }
+        }
+      ],
+      quickReplies: [
+        {
+          action: 'block',
+          label: '여기에 없어요',
+          blockId: '66c3527f7262a477cc45447d'
+        }
+      ]
+    }
+  });
+});
+
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
+});
+
+module.exports = router;
+File: ./quality-chatbot/routes/chatbot/food/scdcheck/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  const item = req.body.action.clientExtra;
+  
+  
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          textCard: {
+            description: '사장님의 업체에서 제품을 제조하기 위해 반가공 원료식품을 수입하셨나요?\n\n예를 들어 크로와상을 만들기 전 반죽된 생지와 같은 것입니다.',
+            buttons: [
+              {
+                action: 'block',
+                label: '예',
+                blockId: '66ba10533c742d06794fd4d7',
+                extra: {
+                  ...item,
+                  scd: '반가공 원료 식품 수입 제품에 대해서도 별도의 자가품질검사를 꼭 받으셔야 해요.\n'
+                }
+              },
+              {
+                action: 'block',
+                label: '아니오',
+                blockId: '66ba10533c742d06794fd4d7',
+                extra: {
+                  ...item,
+                  scd: null
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  });
+});
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
+});
+
+module.exports = router;
+
+File: ./quality-chatbot/routes/chatbot/food/wrap/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  const item = req.body.action.clientExtra;
+  
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          simpleText: {
+            text: `${item.business}을(를) 선택하셨군요!\n\n아래 질문들에 '예' 또는 '아니오'로 답변해주세요.📝`
+          }
+        },
+        {
+          textCard: {
+            description: '제조하시는 용기 및 포장의 재질이 목재나 수지인가요?',
+            buttons: [
+              {
+                action: 'block',
+                label: '예',
+                blockId: '66ba1822bb533f4a219eab51',
+                extra: {
+                  wrap: true
+                }
+              },
+              {
+                action: 'block',
+                label: '아니오',
+                blockId: '66ba1822bb533f4a219eab51',
+                extra: {
+                  wrap: false
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  });
+});
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
+});
+
+module.exports = router;
+
+File: ./quality-chatbot/routes/chatbot/food/trdcheck/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  const item = req.body.action.clientExtra;
+  
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          textCard: {
+            description: '사장님의 업체에서 제품에 사용하기 위해 용기·포장을 수입하셨나요?',
+            buttons: [
+              {
+                action: 'block',
+                label: '예',
+                blockId: '66ba10673c742d06794fd4dc',
+                extra: {
+                  ...item,
+                }
+              },
+              {
+                action: 'block',
+                label: '아니오',
+                blockId: '66ba1822bb533f4a219eab51',
+                extra: {
+                  ...item,
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  });
+});
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
+});
+
+module.exports = router;
+
+File: ./quality-chatbot/routes/chatbot/food/lastcheck/index.js
+Content:
+const router = require('express').Router();
+
+router.post('/', (req, res) => {
+  const item = req.body.action.clientExtra;
+  
+  return res.send({
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          textCard: {
+            description: '포장의 재질이 목재나 수지인가요? ',
+            buttons: [
+              {
+                action: 'block',
+                label: '예',
+                blockId: '66ba1822bb533f4a219eab51',
+                extra: {
+                  ...item,
+                  last: null
+                }
+              },
+              {
+                action: 'block',
+                label: '아니오',
+                blockId: '66ba1822bb533f4a219eab51',
+                extra: {
+                  ...item,
+                  last: '목재나 수지 재질이 아닌 용기나 포장에 대해서도 자가품질검사를 받으셔야 합니다.'
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  });
+});
+router.all('*', (req, res) => {
+  res.status(404).send({ success: false, msg: 'words unknown uri ${req.path}' });
+});
+
+module.exports = router;
+
+File: ./quality-chatbot/routes/users.js
+Content:
+var express = require('express');
+var router = express.Router();
+
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
+});
+
+module.exports = router;
+
+File: ./quality-chatbot/routes/index.js
+Content:
+var express = require('express');
+var router = express.Router();
+const chatbot = require('./chatbot')
+
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+  next();
+});
+
+router.use('/chatbot', chatbot)
+
+module.exports = router;
+
+File: ./quality-chatbot/app.js
+Content:
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+
+const db = require('./config/db');
+const cors = require('cors');
+
+const app = express();
+
+const conn = db.init();
+db.connect(conn)
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+app.use(cors());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+module.exports = app;

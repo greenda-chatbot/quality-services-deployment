@@ -103,3 +103,15 @@ docker-compose up -d
 - 런타임: Node.js
 - 컨테이너화: Docker
 - 오케스트레이션: Docker Compose
+
+# TODO
+- AWS 3002 포트 열기
+- AWS 1880 포트 열기
+- AWS 3000 포트 열기
+
+# 진행상황
+- COPY package.json pnpm-lock.yaml ./ 추가한 경우 quality-chatbot 동작함, quality-adming-web은 동작함 그러나 quality-admin 동작 안함
+- 로컬에서 동작 확인했음
+- AWS EC2에서는 인바운드 규칙으로 3002 포트 열어야 이메일 인증 기능이 동작할 것으로 예상함
+- .env, docker-compose.yml 파일 localhost에서 13.209.138.233로 수정함 (05:48)
+- 

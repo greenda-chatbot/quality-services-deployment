@@ -62,7 +62,7 @@ sshpass -p "$SSH_PASS" ssh $SSH_HOST << EOF
     # log "docker compose up -d"
     # tail -f logs/server.log   
     log "[start] docker system prune -f"
-    docker system prune -f
+    docker system prune -a -f
     log "[end] docker system prune -f"    
 
     log "[start] docker-compose up -d --build"
