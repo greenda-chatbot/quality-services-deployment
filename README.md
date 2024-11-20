@@ -21,8 +21,8 @@ pnpm run prestart
 ```
 
 실행 옵션:
-- 개발 서버: `pnpm run start` (포트: 3002)
-- 프로덕션 서버: `pnpm run next-start` (포트: 4000)
+- 백엔드 서버: `pnpm run start` (포트: 3002)
+- 프론트엔드 서버: `pnpm run next-start` (포트: 4000)
 
 ### Quality Admin Web
 
@@ -33,8 +33,8 @@ pnpm run prestart
 ```
 
 실행 옵션:
-- 개발 서버: `pnpm run start` (포트: 3001)
-- 프로덕션 서버: `pnpm run next-start` (포트: 1880)
+- 백엔드 서버: `pnpm run start` (포트: 3001)
+- 프론트엔드 서버: `pnpm run next-start` (포트: 1880)
 
 ### Quality Chatbot
 
@@ -68,14 +68,14 @@ docker-compose up -d
 각 서비스는 독립적인 Docker 컨테이너에서 실행됩니다:
 
 #### Quality Admin Web
-- 포트: 3001(개발), 1880(프로덕션)
+- 포트: 3001(백엔드), 1880(프론트엔드)
 - 볼륨:
   - 소스코드: `./quality-admin-web:/app`
   - Node 모듈: `/app/node_modules`
   - Next.js 빌드: `/app/.next`
 
 #### Quality Admin
-- 포트: 3002(개발), 4000(프로덕션)
+- 포트: 3002(백엔드), 4000(프론트엔드)
 - 볼륨:
   - 소스코드: `./quality-admin:/app`
   - Node 모듈: `/app/node_modules`
@@ -91,8 +91,8 @@ docker-compose up -d
 
 ## 포트 정보
 
-| 서비스 | 개발 포트 | 프로덕션 포트 |
-|--------|-----------|---------------|
+| 서비스 | 백엔드 포트 | 프론트엔드 포트 |
+|--------|------------|----------------|
 | quality-admin | 3002 | 4000 |
 | quality-admin-web | 3001 | 1880 |
 | quality-chatbot | 3000 | - |
