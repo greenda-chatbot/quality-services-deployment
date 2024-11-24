@@ -1,24 +1,14 @@
+# x-parallel-build: true
+
 services:
-  quality-admin-web:
-    build: 
-      context: ./quality-admin-web
-      dockerfile: Dockerfile
-    ports:
-      - "3001:3001"
-      - "1880:1880"
-    volumes:
-      - ./quality-admin-web:/app
-      - /app/node_modules
-      - /app/.next
-    environment:
-      - NODE_ENV=production
-      - NEXT_PUBLIC_APP_API_KEY = "http://13.209.138.233:3001"
-
-
   quality-admin:
     build:
       context: ./quality-admin
       dockerfile: Dockerfile
+      # args:
+      #   BUILDKIT_INLINE_CACHE: 1
+      # cache_from:
+      #   - quality-admin:latest
     ports:
       - "3002:3002"
       - "4000:4000"
@@ -32,10 +22,32 @@ services:
       - GMAIL_ADDRESS = "qhrjs407@gmail.com"
       - GMAIL_PASSWORD = "uuxfpjgiwhkfohpo"
       - JWT_KEY = 'qhrjs407!'x  
+  quality-admin-web:
+    build:
+      context: ./quality-admin-web
+      dockerfile: Dockerfile
+      # args:
+      #   BUILDKIT_INLINE_CACHE: 1
+      # cache_from:
+      #   - quality-admin-web:latest
+    ports:
+      - "3001:3001"
+      - "1880:1880"
+    volumes:
+      - ./quality-admin-web:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_APP_API_KEY = "http://13.209.138.233:3001"
   quality-chatbot:
     build:
       context: ./quality-chatbot
       dockerfile: Dockerfile
+      # args:
+      #   BUILDKIT_INLINE_CACHE: 1
+      # cache_from:
+      #   - quality-chatbot:latest
     ports:
       - "3000:3000"
     volumes:

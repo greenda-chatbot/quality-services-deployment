@@ -24,6 +24,7 @@ cd /Users/icheolhui/Mirror/Github/B2G/new
 log "프로젝트 파일 복사 시작"
 SSH_PASS=''
 # sshpass -p "$SSH_PASS" rsync -avz ./ $SSH_HOST:$REMOTE_DIR --exclude qdrant_storage --exclude .git
+# sshpass -p "$SSH_PASS" rsync -avz ./ $SSH_HOST:$REMOTE_DIR --exclude .git 
 sshpass -p "$SSH_PASS" rsync -avz ./ $SSH_HOST:$REMOTE_DIR --exclude .git --exclude .next --exclude node_modules
 log "프로젝트 파일 복사 완료"
 
@@ -61,14 +62,16 @@ sshpass -p "$SSH_PASS" ssh $SSH_HOST << EOF
     # nohup pnpm run backend > logs/server.log 2>&1 &
     # log "docker compose up -d"
     # tail -f logs/server.log   
-    log "[start] docker system prune -f"
-    docker system prune -a -f
-    log "[end] docker system prune -f"    
+    # log "[start] docker system prune -f"
+    # sudo sysctl -w vm.drop_caches=3
+    # docker system prune -a -f
+    # docker system prune -f
+    # log "[end] docker system prune -f"    
 
-    log "[start] docker-compose up -d --build"
-    docker-compose up -d --build
-    log "[end] docker-compose up -d --build"
-    docker-compose logs -f
+    # log "[start] docker-compose up -d --build"
+    # docker-compose up -d --build
+    # log "[end] docker-compose up -d --build"
+    # docker-compose logs -f
     # log "원격 서버 작업 완료"
 EOF
 log "AWS 서버 SSH 접속 및 작업 완료"

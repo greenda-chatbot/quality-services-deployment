@@ -1,4 +1,4 @@
-find ./quality-admin ./quality-admin-web ./quality-chatbot -type f \( -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" -o -name "**.env" -o -name ".env.*" -o -name "*.env" \) \
+find ./quality-admin -type f \( -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" -o -name "**.env" -o -name ".env.*" -o -name "*.env" \) \
   -not -path "*/node_modules/*" \
   -not -path "*/.next/*" \
   -not -name "*.test.*" \
