@@ -32,46 +32,21 @@ log "AWS 서버에 SSH 접속 시작"
 sshpass -p "$SSH_PASS" ssh $SSH_HOST << EOF
     cd $REMOTE_DIR
 
-    # sudo rsync -avz ./default.conf /etc/nginx/conf.d/default.conf
-    # sudo nginx -s reload
+    cd ~/app/new/quality-admin
+    pnpm install
+    pnpm run prestart
 
-    # log() {
-    #     echo "[$(date '+%Y-%m-%d %H:%M:%S')] \$1"
-    # }
-    
-    # log "원격 서버 작업 시작"
-    
-    # log "env에서 환경변수 가져오기" 
-    # source .env
-    # log "환경변수 가져오기 완료"
+    cd ~/app/new/quality-admin-web
+    pnpm install
+    pnpm run prestart
 
-    # log "원격 서버에서 ${PORT} 포트의 프로세스 종료 시도"
+    cd ~/app/new/quality-chatbot
+    pnpm install
 
-    # log "원격 서버에서 ${PORT} 포트의 프로세스 종료 완료"
+    cd ~/app/new
+    pm2 restart all
+    pm2 logs
 
-    # docker compose up -d --build
-    # rm -rf node_modules
-    # rm -rf .next
-    # pnpm install 
-    # pnpm run build
-    # log "Go 애플리케이션 실행 시작"
-    # sudo fuser -k 4000/tcp 2>/dev/null
-    # nohup pnpm run start > logs/server.log 2>&1 &
-
-    # sudo fuser -k 3000/tcp 2>/dev/null
-    # nohup pnpm run backend > logs/server.log 2>&1 &
-    # log "docker compose up -d"
-    # tail -f logs/server.log   
-    # log "[start] docker system prune -f"
-    # sudo sysctl -w vm.drop_caches=3
-    # docker system prune -a -f
-    # docker system prune -f
-    # log "[end] docker system prune -f"    
-
-    # log "[start] docker-compose up -d --build"
-    # docker-compose up -d --build
-    # log "[end] docker-compose up -d --build"
-    # docker-compose logs -f
     # log "원격 서버 작업 완료"
 EOF
 log "AWS 서버 SSH 접속 및 작업 완료"
