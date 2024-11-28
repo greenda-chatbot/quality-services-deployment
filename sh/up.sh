@@ -32,19 +32,25 @@ log "AWS 서버에 SSH 접속 시작"
 sshpass -p "$SSH_PASS" ssh $SSH_HOST << EOF
     cd $REMOTE_DIR
 
-    cd ~/app/new/quality-admin
-    pnpm install
-    pnpm run prestart
+    # cd ~/app/new/quality-admin
+    # pnpm install
+    # pnpm run prestart
 
     cd ~/app/new/quality-admin-web
     pnpm install
     pnpm run prestart
 
-    cd ~/app/new/quality-chatbot
-    pnpm install
+    # cd ~/app/new/quality-chatbot
+    # pnpm install
 
     cd ~/app/new
-    pm2 restart all
+    sudo kill $(sudo lsof -t -i:3002)
+    sudo kill $(sudo lsof -t -i:4000)
+    sudo kill $(sudo lsof -t -i:3001)
+    sudo kill $(sudo lsof -t -i:1880)
+    sudo kill $(sudo lsof -t -i:3000)
+    pm2 stop all
+    pm2 start ecosystem.config.js --env production
     pm2 logs
 
     # log "원격 서버 작업 완료"

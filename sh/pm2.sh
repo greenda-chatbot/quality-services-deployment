@@ -1,8 +1,16 @@
-pm2 start ecosystem.config.js --env production
+cd ~/app/new/quality-admin
+pnpm install
+pnpm run prestart
 
-pm2 list                    # 실행 중인 모든 프로세스 확인
-pm2 logs                    # 모든 로그 확인
-pm2 logs [app-name]         # 특정 앱의 로그만 확인
-pm2 stop all               # 모든 프로세스 중지
-pm2 restart all            # 모든 프로세스 재시작
-pm2 delete all             # 모든 프로세스 삭제
+cd ~/app/new/quality-admin-web
+pnpm install
+pnpm run prestart
+
+cd ~/app/new/quality-chatbot
+pnpm install
+
+cd ~/app/new
+pm2 delete all
+pm2 stop ecosystem.config.js
+pm2 start ecosystem.config.js --env production
+pm2 logs
